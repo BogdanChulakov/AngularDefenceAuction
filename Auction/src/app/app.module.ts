@@ -11,6 +11,7 @@ import { RegisterComponent } from './autentication/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './autentication/auth.service';
 import { AuthGuard } from './core/guards/auth.guard';
+import { OrderModule } from './order/order.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthGuard } from './core/guards/auth.guard';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule
   ],
   providers: [
     AuthService,
