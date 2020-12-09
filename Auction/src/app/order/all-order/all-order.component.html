@@ -1,1 +1,4 @@
-<p>all-order works!</p>
+<div *ngFor="let order of allOrders">   
+    <p>{{order.name}}</p>
+    <a routerLink="/order/details/{{order._id}}">{{order._id}}</a>
+</div>

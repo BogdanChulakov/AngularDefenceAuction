@@ -23,9 +23,19 @@ export class OrderService {
       tap(order => this.currentOrder = order)
     );
   }
+  edit(data: any, id:string): Observable<any> {
+    return this.http.post(`${apiUrl}/order/edit/${id}`, data, { withCredentials: true }).pipe(
+      tap(order => this.currentOrder = order)
+    );
+  }
   getDetails(id:string){
     return this.http.get(`${apiUrl}/order/details/${id}`).pipe(
       tap(order => console.log(order))
+    );
+  }
+  getAll(){
+    return this.http.get(`${apiUrl}/order/all`).pipe(
+      tap(orders=> console.log(orders))
     );
   }
 }

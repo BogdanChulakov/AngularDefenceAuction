@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IOrder } from 'src/app/shared/interfaces';
 import { OrderService } from '../order.service';
 
 

@@ -1,11 +1,12 @@
 <div class="card text-white bg-primary mb-10" style="max-width: 40rem;">
     <div class="card-header">{{model.name}}</div>
     <div class="card-body">
-        <p class="card-text">Description:{{model.description}}</p>
-        <p>Price :{{model.price}} $</p> 
+        <p class="card-text">Description: {{model.description}}</p>
+        <p class="card-text">Price : {{model.price}} $</p> 
+        <p class="card-text">_<a routerLink="/order/edit/{{model._id}}">Edit</a>_</p>   
     </div>
     <div class="row">
-
-        <img src="{{model.imageUrl}}" alt="{{model.imageUrl}}" width="200">
+        
+        <img src="{{model.imageUrl}}"  width="200">
     </div>
 </div>
