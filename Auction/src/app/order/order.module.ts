@@ -6,6 +6,7 @@ import { EditOrderComponent } from './edit-order/edit-order.component';
 import { OrderRouterModule } from './order-routing.module';
 import { FormsModule } from '@angular/forms';
 import { DetailsOrderComponent } from './details-order/details-order.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 
 
@@ -14,7 +15,8 @@ import { DetailsOrderComponent } from './details-order/details-order.component';
     CreateOrederComponent,
     AllOrderComponent,
     EditOrderComponent,
-    DetailsOrderComponent
+    DetailsOrderComponent,
+    MyOrderComponent
   ],
   imports: [
     CommonModule,

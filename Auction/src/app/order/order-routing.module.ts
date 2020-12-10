@@ -4,6 +4,7 @@ import { AllOrderComponent } from './all-order/all-order.component';
 import { CreateOrederComponent } from './create-oreder/create-oreder.component';
 import { DetailsOrderComponent } from './details-order/details-order.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
     children: [
   { path: 'create', component: CreateOrederComponent },
   { path: 'all', component: AllOrderComponent },
+  {path:'myOrders',component:MyOrderComponent},
   { path: 'edit/:id', component: EditOrderComponent },
   { path: 'details/:id', component: DetailsOrderComponent }
 ]

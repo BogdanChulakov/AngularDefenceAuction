@@ -29,12 +29,17 @@ export class OrderService {
     );
   }
   getDetails(id:string){
-    return this.http.get(`${apiUrl}/order/details/${id}`).pipe(
+    return this.http.get(`${apiUrl}/order/details/${id}`,{ withCredentials: true }).pipe(
       tap(order => console.log(order))
     );
   }
   getAll(){
     return this.http.get(`${apiUrl}/order/all`).pipe(
+      tap(orders=> console.log(orders))
+    );
+  }
+  getMyOrders(){
+    return this.http.get(`${apiUrl}/order/myOrders`,{ withCredentials: true }).pipe(
       tap(orders=> console.log(orders))
     );
   }

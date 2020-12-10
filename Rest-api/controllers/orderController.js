@@ -7,6 +7,7 @@ function getOrders(req, res, next) {
 }
 function getMyOrders(req, res, next) {
     const { _id: userId } = req.user;
+
     orderModel.find({ userId: userId })
         .then(orders => res.json(orders))
         .catch(next);
@@ -28,7 +29,7 @@ function getOrder(req, res, next) {
 function createOrder(req, res, next) {
     const { name, description, imageUrl, price } = req.body;
 
-    const { _id: id } = req.user;
+    const { _id: userId } = req.user;
 
     orderModel.create({ name, description, imageUrl, price, userId })
         .then(order => {
