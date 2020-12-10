@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './autentication/auth.service';
 import { AuthGuard } from './core/guards/auth.guard';
 import { OrderModule } from './order/order.module';
+import { OfferModule } from './offer/offer.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { OrderModule } from './order/order.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    OrderModule
+    OrderModule,
+    OfferModule
   ],
   providers: [
     AuthService,

@@ -7,6 +7,7 @@ import { OrderRouterModule } from './order-routing.module';
 import { FormsModule } from '@angular/forms';
 import { DetailsOrderComponent } from './details-order/details-order.component';
 import { MyOrderComponent } from './my-order/my-order.component';
+import { OrderService } from './order.service';
 
 
 
@@ -24,7 +25,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
     FormsModule
   ],
   providers: [
-
+    OrderService
   ],
   exports: [
   ]

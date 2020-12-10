@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/autentication/auth.service';
+import { OrderModel } from 'src/app/autentication/models/order.model';
 import { IOrder } from 'src/app/shared/interfaces';
 import { OrderService } from '../order.service';
 
@@ -11,17 +13,24 @@ import { OrderService } from '../order.service';
 })
 export class DetailsOrderComponent implements OnInit {
   id: string;
-  model: any;
+  model: OrderModel;
 
-  constructor(private route: ActivatedRoute,
-    private orderService:OrderService) { }
+  get isLogged(): boolean {
+    return this.authService.isLogged;
+  }
+  constructor(
+    private route: ActivatedRoute,
+    private orderService:OrderService,
+    private authService:AuthService) { 
+      this.model=new OrderModel('','','',0);
+    }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params.id;
     })
     this.orderService.getDetails(this.id).subscribe({
-      next: (order) => {
+      next: (order:OrderModel) => {
         this.model=order;
       },
       error: (err) => {

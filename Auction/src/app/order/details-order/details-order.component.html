@@ -3,7 +3,8 @@
     <div class="card-body">
         <p class="card-text">Description: {{model.description}}</p>
         <p class="card-text">Price : {{model.price}} $</p> 
-        <p class="card-text">_<a routerLink="/order/edit/{{model._id}}">Edit</a>_</p>   
+        <p *ngIf="isLogged" class="card-text" routerLink="/order/edit/{{model._id}}">Edit</p>   
+        <p *ngIf="isLogged" class="card-text" routerLink="/offer/create/{{model._id}}">Make an offer!</p>   
     </div>
     <div class="row">
         

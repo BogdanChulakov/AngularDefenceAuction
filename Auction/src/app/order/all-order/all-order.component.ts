@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IOrder } from 'src/app/shared/interfaces';
+import { AuthService } from 'src/app/autentication/auth.service';
 import { OrderService } from '../order.service';
 
 @Component({
@@ -10,8 +10,13 @@ import { OrderService } from '../order.service';
 export class AllOrderComponent implements OnInit {
 
   allOrders:any;
+  get isLogged(): boolean {
+    return this.authService.isLogged;
+  }
 
-  constructor(private orderService: OrderService) { }
+  constructor(
+    private orderService: OrderService,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
     this.orderService.getAll().subscribe({
