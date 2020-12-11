@@ -1,7 +1,7 @@
 <h3>Make an Offer</h3>
-<div class="row">
+<div class="row" >
     <div class="col-md-3"></div>
-    <form class="col-md-6" #f="ngForm" (ngSubmit)="createOffer()">
+    <form class="col-md-6" *ngIf="!isCreator" #f="ngForm" (ngSubmit)="createOffer()">
         <div class="form-group">
             <label for="orderName">Order name:</label>
             <input type="text" [(ngModel)]="model.orderName" name="orderName" #orderName="ngModel" class="form-control"
@@ -27,4 +27,5 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid">Submit</button>
     </form>
+    <div class="alert alert-danger col-md-6" *ngIf="isCreator">Cannot make an offer because you are Creator!</div>
 </div>

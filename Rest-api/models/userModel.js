@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "Order"
     }],
-    offerts: [{
+    offers: [{
         type: ObjectId,
         ref: "Offer"
     }]

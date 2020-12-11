@@ -30,7 +30,7 @@ export class OrderService {
   }
   getDetails(id:string){
     return this.http.get(`${apiUrl}/order/details/${id}`,{ withCredentials: true }).pipe(
-      tap(order => console.log(order))
+      tap(order => {})
     );
   }
   getAll(){

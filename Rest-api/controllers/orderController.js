@@ -16,12 +16,6 @@ function getOrder(req, res, next) {
     const { id } = req.params;
 
     orderModel.findById(id)
-        // .populate({
-        //     path : 'orders',
-        //     populate : {
-        //       path : 'offerId'
-        //     }
-        //   })
         .then(order => res.json(order))
         .catch(next);
 }

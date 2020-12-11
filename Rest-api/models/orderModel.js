@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    offerts: [{
+    offers: [{
         type: ObjectId,
         ref: "Offer"
     }],
@@ -27,5 +27,11 @@ const orderSchema = new mongoose.Schema({
         ref: "User"
     }
 }, { timestamps: { createdAt: 'created_at' } });
+
+orderSchema.methods = {
+    isCreator: function (userId) {
+        return userId === this.userId;
+    }
+}
 
 module.exports = mongoose.model('Order', orderSchema);

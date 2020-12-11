@@ -1,4 +1,4 @@
-const { offerModel } = require('../models');
+const { offerModel, userModel, orderModel } = require('../models');
 
 
 function createOffer(req, res, next) {
@@ -11,17 +11,20 @@ function createOffer(req, res, next) {
 
 
     offerModel.create({ price, shipingAddress, userId, orderId })
-
-        .then(offer => res.status(200).json(offer))
+        .then(offer => {
+            return Promise.all([
+                userModel.updateOne({ _id: userId }, { $push: { offers: offer._id } }),
+                orderModel.findByIdAndUpdate({ _id: orderId }, {price, $push: { offers: offer._id } })
+            ])
+        })
         .catch(next);
 }
-
 
 function getAllOffer(req, res, next) {
     const { orderId } = req.params;
 
     offerModel.find({ orderId: orderId })
-        .then(offerts => res.json(offerts))
+        .then(offers => res.json(offers))
         .catch(next);
 }
 
@@ -31,7 +34,7 @@ function getMyOffers(req, res, next) {
 
     offerModel.find({ userId: userId })
         .populate('orderId')
-        .then(offerts => res.json(offerts))
+        .then(offers => res.json(offers))
         .catch(next);
 }
 
