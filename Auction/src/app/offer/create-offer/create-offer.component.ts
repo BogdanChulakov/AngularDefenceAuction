@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OfferModel } from 'src/app/autentication/models/offer.model';
 import { OrderService } from 'src/app/order/order.service';
 import { OfferService } from '../offer.service';
@@ -17,6 +17,7 @@ export class CreateOfferComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private orderService: OrderService,
+    private router: Router,
     private offerService: OfferService) {
     this.model = new OfferModel('', 0, 0, '');
   }
@@ -38,7 +39,13 @@ export class CreateOfferComponent implements OnInit {
   }
 
   createOffer() {
-    console.log(this.model)
+    this.offerService.create(this.model,this.orderId).subscribe({
+      next: (offer) => {
+        this.router.navigate([`/order/details/${this.orderId}`]);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
-
 }

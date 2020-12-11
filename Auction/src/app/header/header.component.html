@@ -5,7 +5,8 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor02">
+    <div class="collapse navbar-collapse row" id="navbarColor02">
+        <div class="col-md-8">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" routerLink="">Home
@@ -18,8 +19,16 @@
             <li class="nav-item" *ngIf="isLogged">
                 <a class="nav-link" routerLink="/order/myOrders">My orders</a>
             </li>
+            <li class="nav-item" *ngIf="isLogged">
+                <a class="nav-link" routerLink="/offer/myOffers">My offers</a>
+            </li>
         </ul>
+    </div>
+    <div class="col-md-4">
         <ul class="navbar-nav mr-auto float-lg-right">
+            <li class="nav-item" *ngIf="email">
+                <a class="nav-link" routerLink="/profile">Hello {{email}}!</a>
+            </li>
             <li class="nav-item" *ngIf="!isLogged">
                 <a class="nav-link" routerLink="/login">Login</a>
             </li>
@@ -30,5 +39,6 @@
                 <a class="nav-link"(click)="logoutHandler()">Logout</a>
             </li>
         </ul>
+    </div>
     </div>
 </nav>

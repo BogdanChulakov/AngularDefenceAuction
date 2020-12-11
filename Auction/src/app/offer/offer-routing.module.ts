@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../core/guards/auth.guard';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
-import { MyOfferComponent } from './my-offer/my-offer.component';
+import { MyOffersComponent } from './my-offers/my-offers.component';
 
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
         canActivateChild: [AuthGuard],
         children: [
             { path: 'create/:orderId', component: CreateOfferComponent },
-            { path: 'myOffer', component: MyOfferComponent },
+            { path: 'myOffers', component: MyOffersComponent },
         ]
     }
 ];

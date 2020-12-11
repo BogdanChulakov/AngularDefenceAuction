@@ -9,6 +9,7 @@ import { AuthService } from '../autentication/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  email: string;
   get isLogged(): boolean {
     return this.authService.isLogged;
   }
@@ -19,10 +20,14 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   logoutHandler(): void {
+    this.email=null;
     this.authService.logout().subscribe(() => this.router.navigate(['/login']));
   }
 
   ngOnInit(): void {
+    this.authService.getCurrentUserProfile().subscribe(user => {
+      this.email = user.email;
+    })
   }
 
 }

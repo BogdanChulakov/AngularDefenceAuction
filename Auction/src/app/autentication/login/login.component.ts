@@ -9,12 +9,12 @@ import { LoginModel } from '../models/login.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  model: LoginModel;
 
+  model: LoginModel;
+  errMessage: string;
   constructor(
     private authService: AuthService,
-    private pouter:Router
+    private pouter: Router
   ) {
     this.model = new LoginModel('', '');
   }
@@ -24,12 +24,13 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe({
-      next:() => {
-      this.pouter.navigate(['']);
-    },
-    error:(err)=>{
-      console.error(err);
-    }
-  })
+      next: () => {
+        this.pouter.navigate(['']);
+      },
+      error: (err) => {
+        console.error(err);
+        this.errMessage = err['error'].message;
+      }
+    })
   }
 }

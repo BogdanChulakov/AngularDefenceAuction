@@ -3,7 +3,7 @@ const { ObjectId } = mongoose.Schema.Types;
 
 const offerSchema = new mongoose.Schema({
     price: {
-        type: String,
+        type: Number,
         required: true
     },
     shipingAddress:{
@@ -12,11 +12,13 @@ const offerSchema = new mongoose.Schema({
     },
     userId: {
         type: ObjectId,
-        ref: "User"
+        ref: "User",
+        require:true
     },
     orderId: {
         type: ObjectId,
-        ref: "Order"
+        ref: "Order",
+        require:true
     },
 }, { timestamps: { createdAt: 'created_at' } });
 
