@@ -17,8 +17,8 @@ export class OfferService {
   constructor(private http: HttpClient){
   }
 
-  create(data: any,orderId:string): Observable<any> {
-    return this.http.post(`${apiUrl}/offer/createOffer/${orderId}`, data, { withCredentials: true }).pipe(
+  create(data: any, itemId:string): Observable<any> {
+    return this.http.post(`${apiUrl}/offer/createOffer/${itemId}`, data, { withCredentials: true }).pipe(
       tap(offer => this.currentOffer = offer)
     );
   }

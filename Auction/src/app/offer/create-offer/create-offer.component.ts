@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/autentication/auth.service';
 import { OfferModel } from 'src/app/autentication/models/offer.model';
-import { OrderService } from 'src/app/order/order.service';
+import { ItemService } from 'src/app/item/item.service';
 import { OfferService } from '../offer.service';
 
 @Component({
@@ -12,14 +12,14 @@ import { OfferService } from '../offer.service';
 })
 export class CreateOfferComponent implements OnInit {
 
-  orderId: string;
+  itemId: string;
   model: OfferModel;
   isCreator: boolean;
   userId: string;
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService,
+    private itemService: ItemService,
     private router: Router,
     private offerService: OfferService,
     private authService: AuthService) {
@@ -28,19 +28,20 @@ export class CreateOfferComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.orderId = params.orderId;
+      this.itemId = params.itemId;
+
     })
     this.authService.getCurrentUserProfile().subscribe(user => {
       this.userId = user._id;
     })
-    this.orderService.getDetails(this.orderId).subscribe({
+    this.itemService.getDetails(this.itemId).subscribe({
       next: (order) => {
         if (order['userId'] === this.userId) {
           this.isCreator = true;
         }else{
           this.isCreator=false;
         }
-        this.model.orderName = order['name'];
+        this.model.itemName = order['name'];
         this.model.price = order['price'];
         this.model.newPrice = order['price'];
       },
@@ -51,9 +52,9 @@ export class CreateOfferComponent implements OnInit {
   }
 
   createOffer() {
-    this.offerService.create(this.model, this.orderId).subscribe({
+    this.offerService.create(this.model, this.itemId).subscribe({
       next: (offer) => {
-        this.router.navigate([`/order/details/${this.orderId}`]);
+        this.router.navigate([`/item/details/${this.itemId}`]);
       },
       error: (err) => {
         console.error(err);

@@ -4,7 +4,7 @@ import { CreateOfferComponent } from './create-offer/create-offer.component';
 import { FormsModule } from '@angular/forms';
 import { OfferRouterModule } from './offer-routing.module';
 import { OfferService } from './offer.service';
-import { OrderService } from '../order/order.service';
+import { ItemService } from '../item/item.service';
 import { MyOffersComponent } from './my-offers/my-offers.component';
 
 
@@ -20,7 +20,7 @@ import { MyOffersComponent } from './my-offers/my-offers.component';
     FormsModule
   ],
   providers: [
-    OrderService,
+    ItemService,
     OfferService
   ],
 })

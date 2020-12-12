@@ -31,9 +31,9 @@ const userSchema = new mongoose.Schema({
             message: props => `${props.value} must contains only latin letters and digits!`
         },
     },
-    orders: [{
+    items: [{
         type: ObjectId,
-        ref: "Order"
+        ref: "Item"
     }],
     offers: [{
         type: ObjectId,

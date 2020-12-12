@@ -1,11 +1,11 @@
 const userModel = require('./userModel');
 const tokenBlacklistModel = require('./tokenBlacklistModel');
 const offerModel = require('./offerModel');
-const orderModel = require('./orderModel');
+const itemModel = require('./itemModel');
 
 module.exports = {
     userModel,
     offerModel,
-    orderModel,
+    itemModel,
     tokenBlacklistModel
 }

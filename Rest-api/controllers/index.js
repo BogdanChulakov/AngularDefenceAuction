@@ -1,9 +1,9 @@
 const authController = require('./auth');
-const orderController = require('./orderController');
+const itemController = require('./itemController');
 const offerController = require('./offerController');
 
 module.exports = {
     authController,
-    orderController,
+    itemController,
     offerController,
 }

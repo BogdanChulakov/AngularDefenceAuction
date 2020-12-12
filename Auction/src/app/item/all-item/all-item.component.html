@@ -1,0 +1,12 @@
+<div class="row">   
+    <div class="col-md-3 card bg-secondary"  *ngFor="let item of allItems" style="width: 18rem;">
+        <a class="lightbox" href="{{item.imageUrl}}">
+            <img class="card-img-top mt-2" src="{{item.imageUrl}}" alt="Card image cap" height="200">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">Price: {{item.price}} $</p>
+            <p *ngIf="isLogged" class="card-text" routerLink="/offer/create/{{item._id}}">Make an offer!</p>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
-const orderSchema = new mongoose.Schema({
+const itemSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -28,10 +28,10 @@ const orderSchema = new mongoose.Schema({
     }
 }, { timestamps: { createdAt: 'created_at' } });
 
-orderSchema.methods = {
+itemSchema.methods = {
     isCreator: function (userId) {
         return userId === this.userId;
     }
 }
 
-module.exports = mongoose.model('Order', orderSchema);
+module.exports = mongoose.model('Item', itemSchema);

@@ -9,7 +9,7 @@ const routes: Routes = [
         path: 'offer',
         canActivateChild: [AuthGuard],
         children: [
-            { path: 'create/:orderId', component: CreateOfferComponent },
+            { path: 'create/:itemId', component: CreateOfferComponent },
             { path: 'myOffers', component: MyOffersComponent },
         ]
     }

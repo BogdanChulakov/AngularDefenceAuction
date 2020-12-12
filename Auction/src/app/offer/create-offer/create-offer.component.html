@@ -3,8 +3,8 @@
     <div class="col-md-3"></div>
     <form class="col-md-6" *ngIf="!isCreator" #f="ngForm" (ngSubmit)="createOffer()">
         <div class="form-group">
-            <label for="orderName">Order name:</label>
-            <input type="text" [(ngModel)]="model.orderName" name="orderName" #orderName="ngModel" class="form-control"
+            <label for="orderName">Item name:</label>
+            <input type="text" [(ngModel)]="model.itemName" name="orderName" #orderName="ngModel" class="form-control"
                 id="orderName" disabled>
         </div>
         <div class="form-group">
@@ -27,5 +27,5 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid">Submit</button>
     </form>
-    <div class="alert alert-danger col-md-6" *ngIf="isCreator">Cannot make an offer because you are Creator!</div>
+    <div class="alert alert-danger col-md-6" *ngIf="isCreator">Cannot make an offer because this is your Item!</div>
 </div>

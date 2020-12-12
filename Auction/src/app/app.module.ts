@@ -11,7 +11,7 @@ import { RegisterComponent } from './autentication/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './autentication/auth.service';
 import { AuthGuard } from './core/guards/auth.guard';
-import { OrderModule } from './order/order.module';
+import { ItemModule } from './item/item.module';
 import { OfferModule } from './offer/offer.module';
 
 @NgModule({
@@ -27,7 +27,7 @@ import { OfferModule } from './offer/offer.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    OrderModule,
+    ItemModule,
     OfferModule
   ],
   providers: [

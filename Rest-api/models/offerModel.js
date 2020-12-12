@@ -15,9 +15,9 @@ const offerSchema = new mongoose.Schema({
         ref: "User",
         require:true
     },
-    orderId: {
+    itemId: {
         type: ObjectId,
-        ref: "Order",
+        ref: "Item",
         require:true
     },
 }, { timestamps: { createdAt: 'created_at' } });

@@ -1,7 +1,7 @@
-<h3>Edit Order</h3>
+<h3>Create item</h3>
 <div class="row">
     <div class="col-md-3"></div>
-    <form class="col-md-6" #editForm="ngForm" (ngSubmit)="editOrder()">
+    <form class="col-md-6" #createForm="ngForm" (ngSubmit)="create()">
         <fieldset>
             <div class="form-group">
                 <label for="name">Name</label>
@@ -38,8 +38,7 @@
                     Price cannot be a negative!
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]="editForm.form.invalid">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="createForm.form.invalid">Submit</button>
         </fieldset>
     </form>
-    
 </div>
