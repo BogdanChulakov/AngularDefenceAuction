@@ -1,3 +1,10 @@
-body {
-    background-image: url("https://www.indexexchange.com/wp-content/uploads/2019/03/header-bidding-auction-ss-1920_uusz3n.gif");
+h1{
+    margin-block: 30px;
+    text-align:center;
+    color: black;
+}
+p{
+    size: 40px;
+    color: black;
+    margin-block: 30px;
 }
