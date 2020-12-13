@@ -19,18 +19,18 @@ export class DetailsItemComponent implements OnInit {
   }
   constructor(
     private route: ActivatedRoute,
-    private itemService:ItemService,
-    private authService:AuthService) { 
-      this.model=new ItemModel('','','',0);
-    }
+    private itemService: ItemService,
+    private authService: AuthService) {
+    this.model = new ItemModel('', '', '', 0, '');
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params.id;
     })
     this.itemService.getDetails(this.id).subscribe({
-      next: (item:ItemModel) => {
-        this.model=item;
+      next: (item: ItemModel) => {
+        this.model = item;
       },
       error: (err) => {
         console.error(err);

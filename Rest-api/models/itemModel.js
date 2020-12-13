@@ -18,6 +18,10 @@ const itemSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    timeLimit:{
+        type:Date,
+        required:true
+    },
     offers: [{
         type: ObjectId,
         ref: "Offer"

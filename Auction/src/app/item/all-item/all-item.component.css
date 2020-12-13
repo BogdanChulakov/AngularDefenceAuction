@@ -1,11 +1,15 @@
 .card{
     text-align:center;
     margin:30px;
-    background-color:khaki;
-    color:lawngreen;
+    background-color:dimgrey;
+    color:lightcyan;
+    border-style: solid;
+    border-color: black;
 }
 .row{
-
     margin-left: 100px;
-
+}
+img{
+    border-style: solid;
+    border-color: black;
 }

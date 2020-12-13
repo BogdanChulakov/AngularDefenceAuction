@@ -1,0 +1,8 @@
+.card{
+    color: lightcyan;
+    border: solid;
+    border-color: black;
+}
+.card-header{
+    background-color: darkgray;
+}

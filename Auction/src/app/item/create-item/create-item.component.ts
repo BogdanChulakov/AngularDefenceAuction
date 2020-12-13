@@ -12,12 +12,13 @@ import { ItemService } from '../item.service';
 export class CreateItemComponent implements OnInit {
 
   model: ItemModel;
+  errorMessage:string;
 
   constructor(private itemService: ItemService,
     private router: Router,
     private route: ActivatedRoute
     ) {
-    this.model = new ItemModel('', '', '', 0 );
+    this.model = new ItemModel('', '', '', 0 ,'');
   }
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ export class CreateItemComponent implements OnInit {
         this.router.navigate([`/item/details/${item._id}`]);
       },
       error: (err) => {
-        console.error(err);
+       this.errorMessage=err.error;
       }
     })
   }

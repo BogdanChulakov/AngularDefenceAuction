@@ -1,12 +1,44 @@
-<div class="card text-white bg-primary mb-10" style="max-width: 40rem;">
-    <div class="card-header">{{model.name}}</div>
-    <div class="card-body">
-        <p class="card-text">Description: {{model.description}}</p>
-        <p class="card-text">Price : {{model.price}} $</p> 
-        <p *ngIf="isLogged" class="card-text" routerLink="/item/edit/{{model['_id']}}">Edit</p>      
-    </div>
-    <div class="row">
-        
-        <img src="{{model.imageUrl}}"  width="200">
+<div class="row">
+    <div class="col-md-3 "></div>
+    <div class="col-md-6 card text-white  bg-dark">
+        <div class="card-header">{{model.name}}</div>
+        <div class="card-body">
+            <p class="card-text">Description: {{model.description}}</p>
+            <p class="card-text">Price : {{model.price}} $</p>
+            <p id="demo"></p>
+            <p id="date">{{model.timeLimit}}</p>
+            <img src="{{model.imageUrl}}" width="500">
+            <p>
+                <button class="btn btn-primary" *ngIf="isLogged" routerLink="/item/edit/{{model['_id']}}">Edit</button>
+            </p>
+        </div>
     </div>
 </div>
+
+<script>
+
+    var date = document.getElementById("date").textContent;
+
+    var countDownDate = new Date(date).getTime();
+
+    var x = setInterval(function () {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+</script>

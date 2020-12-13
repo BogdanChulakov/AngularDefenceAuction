@@ -1,0 +1,17 @@
+.card{
+    margin-top: 30px;
+    text-align: left;
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+}
+img{
+    border-style: solid;
+    border-color: black;
+}
+.btn{
+    margin-top: 20px;
+}
+p{
+align-content: center;
+}
