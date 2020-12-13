@@ -16,6 +16,7 @@ export class CreateOfferComponent implements OnInit {
   model: OfferModel;
   isCreator: boolean;
   userId: string;
+  errorMessage: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,8 +39,8 @@ export class CreateOfferComponent implements OnInit {
       next: (order) => {
         if (order['userId'] === this.userId) {
           this.isCreator = true;
-        }else{
-          this.isCreator=false;
+        } else {
+          this.isCreator = false;
         }
         this.model.itemName = order['name'];
         this.model.price = order['price'];
@@ -57,7 +58,7 @@ export class CreateOfferComponent implements OnInit {
         this.router.navigate([`/item/details/${this.itemId}`]);
       },
       error: (err) => {
-        console.error(err);
+        this.errorMessage=err.error;
       }
     })
   }
