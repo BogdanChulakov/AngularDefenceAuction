@@ -6,3 +6,10 @@
 .card-header{
     background-color: darkgray;
 }
+h3{
+    margin-top: 10px;
+    text-align: center;
+}
+h5{
+    text-align: center;
+}

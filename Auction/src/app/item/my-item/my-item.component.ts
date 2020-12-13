@@ -8,14 +8,17 @@ import { ItemService } from '../item.service';
 })
 export class MyItemComponent implements OnInit {
 
-  myItems: any;
+  myActiveItems: any;
+  expiredItems:any;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
     this.itemService.getMyItems().subscribe({
       next: (items) => {
-        this.myItems = items;
+        console.log(items)
+        this.myActiveItems = items['activeItems'];
+        this.expiredItems=items['expiredItems'];
       },
       error: (err) => {
         console.error(err);

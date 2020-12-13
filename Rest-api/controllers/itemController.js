@@ -11,9 +11,15 @@ function getItems(req, res, next) {
 function getMyItems(req, res, next) {
     const { _id: userId } = req.user;
 
-    itemModel.find({ userId: userId })
-        .then(items => res.json(items))
-        .catch(next);
+    const dateNow = new Date().toJSON();
+
+    Promise.all([
+        itemModel.find({ userId: userId, timeLimit: { $gte: dateNow } }),
+        itemModel.find({ userId: userId, timeLimit: { $lte: dateNow } })]
+    ).then(([activeItems,expiredItems]) => {
+        res.json({activeItems,expiredItems});
+    })
+    .catch(next);
 }
 function getItem(req, res, next) {
     const { id } = req.params;

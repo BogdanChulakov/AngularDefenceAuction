@@ -1,0 +1,12 @@
+h2{
+    text-align: center;
+}
+.myStyle{
+   color: black;
+   background-color: darkgray;
+    border: black;
+    border-style: solid;
+}
+.row{
+    margin-top: 25px;
+}

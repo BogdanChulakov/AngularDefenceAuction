@@ -40,7 +40,7 @@ export class ItemService {
   }
   getMyItems(){
     return this.http.get(`${apiUrl}/item/myItems`,{ withCredentials: true }).pipe(
-      tap(item=> console.log(item))
+      tap(items=> console.log(items))
     );
   }
 }
