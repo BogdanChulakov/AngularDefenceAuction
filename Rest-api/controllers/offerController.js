@@ -23,10 +23,13 @@ function createOffer(req, res, next) {
         .catch(next);
 }
 
-function getAllOffer(req, res, next) {
+function getAllOffers(req, res, next) {
     const { itemId } = req.params;
 
     offerModel.find({ itemId: itemId })
+        .sort([['price', -1]])
+        .populate('itemId')
+        .populate('userId')
         .then(offers => res.json(offers))
         .catch(next);
 }
@@ -37,13 +40,15 @@ function getMyOffers(req, res, next) {
 
     offerModel.find({ userId: userId })
         .populate('itemId')
-        .then(offers => res.json(offers))
+        .then(offers =>
+            res.json(offers)
+        )
         .catch(next);
 }
 
 
 module.exports = {
     createOffer,
-    getAllOffer,
+    getAllOffers,
     getMyOffers
 }

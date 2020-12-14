@@ -27,4 +27,9 @@ export class OfferService {
       tap(offer => console.log (offer))
     );
   }
+  getAllOffers(itemId:string){
+    return this.http.get(`${apiUrl}/offer/getAllOffers/${itemId}`,  { withCredentials: true }).pipe(
+      tap(offer => console.log (offer))
+    );
+  }
 }

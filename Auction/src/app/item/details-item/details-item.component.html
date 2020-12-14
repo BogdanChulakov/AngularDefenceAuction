@@ -8,9 +8,15 @@
             <p id="demo"></p>
             <p id="date">{{model.timeLimit}}</p>
             <img src="{{model.imageUrl}}" width="500">
-            <p>
-                <button class="btn btn-primary" *ngIf="isLogged" routerLink="/item/edit/{{model['_id']}}">Edit</button>
-            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" *ngIf="isLogged" routerLink="/item/edit/{{model['_id']}}">Edit</button>
+                </div>
+                <div class="col-md-6 ">
+                    <button class="btn btn-primary float-right" *ngIf="isLogged" routerLink="/offer/getAllOffers/{{model['_id']}}">Offers</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

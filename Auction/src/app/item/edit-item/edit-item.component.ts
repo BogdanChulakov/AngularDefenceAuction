@@ -18,7 +18,7 @@ export class EditItemComponent implements OnInit {
     private itemService: ItemService,
     private router: Router
   ) {
-    this.model = new ItemModel('', '', '', 0)
+    this.model = new ItemModel('', '', '', 0,'')
   }
 
   ngOnInit(): void {

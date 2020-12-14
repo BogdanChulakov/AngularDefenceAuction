@@ -6,13 +6,15 @@ import { OfferRouterModule } from './offer-routing.module';
 import { OfferService } from './offer.service';
 import { ItemService } from '../item/item.service';
 import { MyOffersComponent } from './my-offers/my-offers.component';
+import { AllOffersComponent } from './all-offers/all-offers.component';
 
 
 
 @NgModule({
   declarations: [
     CreateOfferComponent,
-    MyOffersComponent
+    MyOffersComponent,
+    AllOffersComponent
   ],
   imports: [
     CommonModule,
