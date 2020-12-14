@@ -55,7 +55,7 @@ export class CreateOfferComponent implements OnInit {
   createOffer() {
     this.offerService.create(this.model, this.itemId).subscribe({
       next: (offer) => {
-        this.router.navigate([`/item/details/${this.itemId}`]);
+        this.router.navigate([`/offer/myOffers`]);
       },
       error: (err) => {
         this.errorMessage=err.error;

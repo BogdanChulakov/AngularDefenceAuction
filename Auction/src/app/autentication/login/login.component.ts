@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   errMessage: string;
   constructor(
     private authService: AuthService,
-    private pouter: Router
+    private router: Router
   ) {
     this.model = new LoginModel('', '');
   }
@@ -25,12 +25,15 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.model).subscribe({
       next: () => {
-        this.pouter.navigate(['']);
+        this.router.navigate(['']);
       },
       error: (err) => {
         console.error(err);
         this.errMessage = err['error'].message;
       }
     })
+    this.router.navigate(['']).then(x => {
+      location.reload();
+    });
   }
 }

@@ -1,10 +1,12 @@
 <h3>ACTIVE ITEMS</h3>
-<h5 *ngIf="!myActiveItems">No active Items!</h5>    
+<hr>
+<h5 *ngIf="!myActiveItems">No active Items!</h5>
 <div class="card m-4" *ngFor="let item of myActiveItems">
     <div class="card-header">
         <h5>
             <a routerLink="/item/details/{{item._id}}">{{item.name}}</a>
         </h5>
+
     </div>
     <div class="card-body bg-dark">
         <blockquote class="blockquote mb-0">
@@ -21,7 +23,8 @@
     </div>
 </div>
 <h3>EXPIRED ITEMS</h3>
-<h5 *ngIf="!expiredItems">No expired Items!</h5>    
+<hr>
+<h5 *ngIf="!expiredItems">No expired Items!</h5>
 <div class="card m-4" *ngFor="let item of expiredItems">
     <div class="card-header">
         <h5>
