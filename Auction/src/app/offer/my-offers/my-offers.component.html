@@ -4,15 +4,16 @@
         <h2>My offers</h2>
         <div class="alert alert-warning" *ngIf="offers.length===0">You have not yet created an offer!</div>
         <div class="myDiv row" *ngFor="let offer of offers">
-            <div class="col-md-6">
+            <img class="asl col-md-2" src="{{offer.itemId.imageUrl}}"  height="100">
+            <div class="col-md-5">
                 Item: {{offer.itemId.name}}
                 <hr>
                 End date: {{offer.itemId.timeLimit | date}}
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 Price: {{offer.price}}$
                 <hr>
-                Address: {{offer.shipingAddress}} Phone: {{offer.userId.phoneNumber}}
+                Address: {{offer.shipingAddress}}
             </div>
         </div>
     </div>
