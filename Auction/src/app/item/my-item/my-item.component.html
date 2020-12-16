@@ -1,6 +1,6 @@
 <h3>ACTIVE ITEMS</h3>
 <hr>
-<h5 *ngIf="!myActiveItems">No active Items!</h5>
+<div class="alert alert-warning" *ngIf="myActiveItems.length===0">No items with valid date!</div>
 <div class="card m-4" *ngFor="let item of myActiveItems">
     <div class="card-header">
         <h5>
@@ -24,7 +24,9 @@
 </div>
 <h3>EXPIRED ITEMS</h3>
 <hr>
-<h5 *ngIf="!expiredItems">No expired Items!</h5>
+
+<div class="alert alert-warning" *ngIf="expiredItems.length===0">No items with expired date!</div>
+
 <div class="card m-4" *ngFor="let item of expiredItems">
     <div class="card-header">
         <h5>

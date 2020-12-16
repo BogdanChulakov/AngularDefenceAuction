@@ -5,6 +5,7 @@ import { LoginComponent } from './autentication/login/login.component';
 import { RegisterComponent } from './autentication/register/register.component';
 import { UserDetailsComponent } from './autentication/user-details/user-details.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 ]
  }
+
 ];
 
 

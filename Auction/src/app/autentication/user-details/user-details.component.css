@@ -1,13 +1,24 @@
+h3{
+    margin-top: 20px;
+    text-align: center;
+}
 .myClass{
     margin-top: 30px;
-    margin-left: 230px;
-    margin-right: 230px;
+    margin-left: 280px;
+    margin-right: 280px;
 
     text-align: left;
     color: black;
     background-color: darkgray;
     border: solid;
 }
-.btn{
+.col-md-6{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.btn{ 
+    align-self:right;
     margin: 20px;
 }

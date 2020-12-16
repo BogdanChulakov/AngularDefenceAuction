@@ -34,7 +34,7 @@
                 <label for="price">Price</label>
                 <input type="number" class="form-control" id="price1" name="price" aria-describedby="priceHelp"
                     placeholder="Enter price" min="0" required [(ngModel)]="model.price" #price="ngModel">
-                <div [hidden]="price.value>=0 || price.pristine" class="alert alert-danger">
+                <div [hidden]="price.value > 0  || price.pristine" class="alert alert-danger">
                     Price cannot be a negative!
                 </div>
             </div>

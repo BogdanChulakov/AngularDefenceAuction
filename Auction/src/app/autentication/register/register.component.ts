@@ -23,15 +23,15 @@ export class RegisterComponent implements OnInit {
   register() {
     this.authService.register(this.model).subscribe({
       next: () => {
-        this.router.navigate(['']);
+        this.router.navigate(['']).then(x => {
+          location.reload();
+        });
       },
       error: (err) => {
         console.error(err);
       }
     })
-    this.router.navigate(['']).then(x => {
-      location.reload();
-    });
+  
   }
 
 }

@@ -2,6 +2,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2>All Offers for this Item</h2>
+        <div class="alert alert-warning" *ngIf="allOffers.length===0">No offers for this item!</div>
         <div class="myDiv row" *ngFor="let offer of allOffers">
             <div class="col-md-6">
                 <strong>Item:</strong> {{offer.itemId.name}}
@@ -11,7 +12,7 @@
             <div class="col-md-6">
                 Price: {{offer.price}}$ Address: {{offer.shipingAddress}}
                 <hr>
-                Name:  {{offer.userId.firstName}}  {{offer.userId.lastName}} Phone: {{offer.userId.phoneNumber}}
+                Name: {{offer.userId.firstName}}  {{offer.userId.lastName}} Phone: {{offer.userId.phoneNumber}}
             </div>
         </div>
     </div>

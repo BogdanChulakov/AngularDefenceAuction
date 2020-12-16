@@ -19,13 +19,13 @@
             <div [hidden]="newPrice.value > price.value || newPrice.pristine" class="alert alert-danger">
                 Your offer must be bigger from the Price!
             </div>
-            <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
         </div>
         <div class="form-group">
             <label for="shipingAddress">Shiping Address:</label>
             <input type="text" class="form-control" id="shipingAddress" [(ngModel)]="model.shipingAddress"
                 name="shipingAddress" #shipingAddress="ngModel" required>
         </div>
+        <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
         <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid">Submit</button>
     </form>
     <div class="alert alert-danger col-md-6" *ngIf="isCreator">Cannot make an offer because this is your Item!</div>

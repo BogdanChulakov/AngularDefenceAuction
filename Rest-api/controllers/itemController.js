@@ -16,10 +16,10 @@ function getMyItems(req, res, next) {
     Promise.all([
         itemModel.find({ userId: userId, timeLimit: { $gte: dateNow } }),
         itemModel.find({ userId: userId, timeLimit: { $lte: dateNow } })]
-    ).then(([activeItems,expiredItems]) => {
-        res.json({activeItems,expiredItems});
+    ).then(([activeItems, expiredItems]) => {
+        res.json({ activeItems, expiredItems });
     })
-    .catch(next);
+        .catch(next);
 }
 function getItem(req, res, next) {
     const { id } = req.params;
@@ -40,9 +40,6 @@ function createItem(req, res, next) {
     if (price <= 0) {
         return res.status(401).json('Price cannot be a negative!')
     }
-    if (name.length < 3) {
-        return res.status(401).json('Name must be at least 3 symbols!!')
-    }
     const { _id: userId } = req.user;
 
     itemModel.create({ name, description, imageUrl, price, userId, timeLimit })
@@ -55,6 +52,10 @@ function editItem(req, res, next) {
     const { name, description, imageUrl, price } = req.body;
 
     const id = req.params.id;
+
+    if (price <= 0) {
+        return res.status(401).json("Price cannot be a negative!")
+    }
 
     itemModel.findOneAndUpdate({ _id: id }, { name, description, imageUrl, price }, { runValidators: true, new: true })
         .then(item => {

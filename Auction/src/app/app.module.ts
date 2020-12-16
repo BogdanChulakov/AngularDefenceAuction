@@ -15,7 +15,7 @@ import { ItemModule } from './item/item.module';
 import { OfferModule } from './offer/offer.module';
 import { UserDetailsComponent } from './autentication/user-details/user-details.component';
 import { EditProfileComponent } from './autentication/edit-profile/edit-profile.component';
-
+import { NotFoundComponent } from './core/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { EditProfileComponent } from './autentication/edit-profile/edit-profile.
     RegisterComponent,
     HomeComponent,
     UserDetailsComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

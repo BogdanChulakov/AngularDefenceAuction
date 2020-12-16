@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.model).subscribe({
       next: () => {
-        this.router.navigate(['']);
+        this.router.navigate(['']).then(x => {
+          location.reload();
+        });
       },
       error: (err) => {
         console.error(err);
         this.errMessage = err['error'].message;
       }
     })
-    this.router.navigate(['']).then(x => {
-      location.reload();
-    });
+   
   }
 }
