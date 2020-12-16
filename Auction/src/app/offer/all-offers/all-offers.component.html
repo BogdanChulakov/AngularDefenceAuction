@@ -4,14 +4,14 @@
         <h2>All Offers for this Item</h2>
         <div class="myDiv row" *ngFor="let offer of allOffers">
             <div class="col-md-6">
-                Item:{{offer.itemId.name}}
+                <strong>Item:</strong> {{offer.itemId.name}}
                 <hr>
-                End date:{{offer.itemId.timeLimit}}
+                End date: {{offer.itemId.timeLimit | date}}
             </div>
             <div class="col-md-6">
-                Price: {{offer.price}}$
+                Price: {{offer.price}}$ Address: {{offer.shipingAddress}}
                 <hr>
-                Address:{{offer.shipingAddress}} Phone: {{offer.userId.phoneNumber}}
+                Name:  {{offer.userId.firstName}}  {{offer.userId.lastName}} Phone: {{offer.userId.phoneNumber}}
             </div>
         </div>
     </div>

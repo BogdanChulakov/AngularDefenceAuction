@@ -42,7 +42,7 @@ export class AuthService {
     }
 
     updateProfile(data: any): Observable<IUser> {
-        return this.http.put(`${apiUrl}/users/profile`, data, { withCredentials: true }).pipe(
+        return this.http.put(`${apiUrl}/users/editProfile`, data, { withCredentials: true }).pipe(
             tap((user: IUser) => this.currentUser = user)
         );
     }

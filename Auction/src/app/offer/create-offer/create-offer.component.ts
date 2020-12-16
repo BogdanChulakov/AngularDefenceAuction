@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/autentication/auth.service';
-import { OfferModel } from 'src/app/autentication/models/offer.model';
+import { OfferModel } from 'src/app/offer/models/offer.model';
 import { ItemService } from 'src/app/item/item.service';
 import { OfferService } from '../offer.service';
 

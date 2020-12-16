@@ -12,8 +12,24 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="exampleInputFirstName">First name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp"
+                placeholder="Enter First name"  required [(ngModel)]="model.firstName" #firstName="ngModel">
+            <div [hidden]="firstName.value.length >= 2 || firstName.pristine" class="alert alert-danger">
+                First name must be at lest 2 characters!
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputLastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp"
+                placeholder="Enter last name"  required [(ngModel)]="model.lastName" #lastName="ngModel">
+            <div [hidden]="lastName.value.length >= 2 || lastName.pristine" class="alert alert-danger">
+                Last name must be at lest 2 characters!
+            </div>
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Phone number</label>
-            <input type="email" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="phoneNumber"
+            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="phoneNumber"
                 placeholder="Enter Phone Number" required pattern="^[0-9]+$" [(ngModel)]="model.phoneNumber"
                 #phoneNumber="ngModel">
             <div [hidden]="phoneNumber.valid || phoneNumber.pristine" class="alert alert-danger">

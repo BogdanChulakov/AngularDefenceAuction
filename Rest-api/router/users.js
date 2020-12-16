@@ -9,7 +9,7 @@ router.post('/login', authController.login);
 router.post('/logout', authController.logout);
 
 router.get('/profile', auth(),authController.getProfileInfo);
-router.put('/profile', auth(),authController.editProfileInfo);
+router.put('/editProfile', auth(),authController.editProfileInfo);
 
 
 module.exports = router

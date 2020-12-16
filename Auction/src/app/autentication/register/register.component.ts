@@ -13,8 +13,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private pouter:Router) {
-    this.model = new RegisterModel('', '', '', '');
+    private router: Router) {
+    this.model = new RegisterModel('', '', '', '','','');
   }
 
   ngOnInit(): void {
@@ -22,13 +22,16 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.authService.register(this.model).subscribe({
-      next:() => {
-      this.pouter.navigate(['']);
-    },
-    error:(err)=>{
-      console.error(err);
-    }
-  })
+      next: () => {
+        this.router.navigate(['']);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
+    this.router.navigate(['']).then(x => {
+      location.reload();
+    });
   }
 
 }

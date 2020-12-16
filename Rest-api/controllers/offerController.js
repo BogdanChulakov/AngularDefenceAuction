@@ -40,6 +40,7 @@ function getMyOffers(req, res, next) {
 
     offerModel.find({ userId: userId })
         .populate('itemId')
+        .populate('userId')
         .then(offers =>
             res.json(offers)
         )

@@ -13,6 +13,8 @@ import { AuthService } from './autentication/auth.service';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ItemModule } from './item/item.module';
 import { OfferModule } from './offer/offer.module';
+import { UserDetailsComponent } from './autentication/user-details/user-details.component';
+import { EditProfileComponent } from './autentication/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { OfferModule } from './offer/offer.module';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    UserDetailsComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

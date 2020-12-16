@@ -1,0 +1,13 @@
+.myClass{
+    margin-top: 30px;
+    margin-left: 230px;
+    margin-right: 230px;
+
+    text-align: left;
+    color: black;
+    background-color: darkgray;
+    border: solid;
+}
+.btn{
+    margin: 20px;
+}
