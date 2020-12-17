@@ -14,11 +14,15 @@
                 <div class="col-md-2">
                     <img src="{{item.imageUrl}}" alt="Alternate Text" height="120" width="150" />
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <p>{{item.description}}</p>
                     <p>Price: {{item.price}} $</p>
                 </div>
+                <div class="col-md-2">
+                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">Delete</a>
+                </div>
             </div>
+
         </blockquote>
     </div>
 </div>
@@ -39,9 +43,12 @@
                 <div class="col-md-2">
                     <img src="{{item.imageUrl}}" alt="Alternate Text" height="120" width="150" />
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <p>{{item.description}}</p>
                     <p>Price: {{item.price}} $</p>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">Delete</a>
                 </div>
             </div>
         </blockquote>

@@ -20,3 +20,10 @@ img{
     border: solid;
   
 }
+.alert{
+    margin-left: 131px;
+    margin-right: 150px;
+    margin-top: 30px;
+    border: solid;
+    text-align: center;
+}

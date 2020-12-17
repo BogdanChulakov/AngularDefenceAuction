@@ -35,7 +35,7 @@ export class AllItemComponent implements OnInit {
   }
   search() {
     console.log(this.model)
-    this.itemService.getAll(this.model).subscribe({
+    this.itemService.getSearchItems(this.model).subscribe({
       next: (items) => {
         this.allItems=items;
       },

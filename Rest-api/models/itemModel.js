@@ -22,6 +22,10 @@ const itemSchema = new mongoose.Schema({
         type:Date,
         required:true
     },
+    isDeleted:{
+        type: Boolean,
+        required:true
+    },
     offers: [{
         type: ObjectId,
         ref: "Offer"

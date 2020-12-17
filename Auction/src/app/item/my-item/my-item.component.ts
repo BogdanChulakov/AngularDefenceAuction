@@ -9,7 +9,7 @@ import { ItemService } from '../item.service';
 export class MyItemComponent implements OnInit {
 
   myActiveItems: any;
-  expiredItems:any;
+  expiredItems: any;
 
   constructor(private itemService: ItemService) { }
 
@@ -18,12 +18,11 @@ export class MyItemComponent implements OnInit {
       next: (items) => {
         console.log(items)
         this.myActiveItems = items['activeItems'];
-        this.expiredItems=items['expiredItems'];
+        this.expiredItems = items['expiredItems'];
       },
       error: (err) => {
         console.error(err);
       }
     })
   }
-
 }

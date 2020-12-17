@@ -28,6 +28,11 @@ export class ItemService {
       tap(item => this.currentItem = item)
     );
   }
+  delete(id:string): Observable<any> {
+    return this.http.post(`${apiUrl}/item/delete/${id}`,{},{ withCredentials: true }).pipe(
+      tap(msg => msg)
+    );
+  }
   getDetails(id:string){
     return this.http.get(`${apiUrl}/item/details/${id}`,{ withCredentials: false }).pipe(
       tap(item => {})
@@ -35,6 +40,11 @@ export class ItemService {
   }
   getAll(data:any){
     return this.http.get(`${apiUrl}/item/all`,data).pipe(
+      tap(items=> console.log(items))
+    );
+  }
+  getSearchItems(data:any){
+    return this.http.get(`${apiUrl}/item/search/${data.name}`).pipe(
       tap(items=> console.log(items))
     );
   }

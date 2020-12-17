@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailsItemComponent } from './details-item/details-item.component';
 import { MyItemComponent } from './my-item/my-item.component';
 import { ItemService } from './item.service';
+import { DeleteItemComponent } from './delete-item/delete-item.component';
 
 
 
@@ -17,7 +18,8 @@ import { ItemService } from './item.service';
     AllItemComponent,
     EditItemComponent,
     DetailsItemComponent,
-    MyItemComponent
+    MyItemComponent,
+    DeleteItemComponent
   ],
   imports: [
     CommonModule,

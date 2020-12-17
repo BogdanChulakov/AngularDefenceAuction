@@ -1,0 +1,18 @@
+<h3>I you shure to want delete this Item?</h3>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-3">
+        <a class="btn btn-danger" (click)="deleteItem()">Yes</a>
+    </div>
+    <div class="col-md-3">
+        <a class="btn btn-primary" routerLink="/item/myItems">No</a>
+    </div>
+</div>
+<div class="row">
+    <img src="{{model.imageUrl}}" alt="">
+    <div class="myCls">
+        <p>Name: {{model.name}}</p>
+        <p>Description: {{model.description}}</p>
+        <p>Price: {{model.price}}$</p>
+    </div>
+</div>

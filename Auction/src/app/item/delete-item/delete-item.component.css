@@ -1,0 +1,15 @@
+h3{
+    margin: 30px;
+    text-align: center;
+    color: red;
+}
+img{
+    margin: 50px;
+    border-style: solid;
+}
+.myCls{
+    margin: 50px;
+    font-family:cursive;
+    font-size: 20px;
+    color: black;
+}

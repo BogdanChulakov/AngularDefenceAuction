@@ -4,7 +4,16 @@ function getItems(req, res, next) {
 
     const dateNow = new Date().toJSON();
 
-    itemModel.find({timeLimit: { $gte: dateNow } })
+    itemModel.find({isDeleted:false,timeLimit: { $gte: dateNow } })
+        .then(items => res.json(items))
+        .catch(next);
+}
+function getSearchItems(req, res, next) {
+    const { search } = req.params;
+
+    const dateNow = new Date().toJSON();
+
+    itemModel.find({ name: { $regex: search, $options: "i" } ,isDeleted:false, timeLimit: { $gte: dateNow } })
         .then(items => res.json(items))
         .catch(next);
 }
@@ -14,8 +23,8 @@ function getMyItems(req, res, next) {
     const dateNow = new Date().toJSON();
 
     Promise.all([
-        itemModel.find({ userId: userId, timeLimit: { $gte: dateNow } }),
-        itemModel.find({ userId: userId, timeLimit: { $lte: dateNow } })]
+        itemModel.find({ userId: userId,isDeleted:false, timeLimit: { $gte: dateNow } }),
+        itemModel.find({ userId: userId,isDeleted:false, timeLimit: { $lte: dateNow } })]
     ).then(([activeItems, expiredItems]) => {
         res.json({ activeItems, expiredItems });
     })
@@ -42,7 +51,7 @@ function createItem(req, res, next) {
     }
     const { _id: userId } = req.user;
 
-    itemModel.create({ name, description, imageUrl, price, userId, timeLimit })
+    itemModel.create({ name, description, imageUrl, price, userId, timeLimit, isDeleted:false })
         .then(item => {
             res.json(item);
         })
@@ -63,11 +72,23 @@ function editItem(req, res, next) {
         })
         .catch(next);
 }
+function deleteItem(req, res, next) {
+
+    const id = req.params.id;
+
+    itemModel.findOneAndUpdate({ _id: id }, { isDeleted:true }, { runValidators: true, new: true })
+        .then(item => {
+            res.status(200).json("Item was deleted succesfuly!");
+        })
+        .catch(next);
+}
 
 module.exports = {
     getItems,
     getItem,
     createItem,
     getMyItems,
-    editItem
+    editItem,
+    getSearchItems,
+    deleteItem
 }
