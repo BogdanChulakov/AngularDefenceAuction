@@ -8,12 +8,13 @@ h2{
     background-color: darkgray;
     border: black;
     border-style: solid;
+    font-family:cursive;
 }
 .alert{
     border: solid;
     margin-top: 30px;
     text-align: center;
 }
-.asl{
+img{
     border-right: solid;
 }

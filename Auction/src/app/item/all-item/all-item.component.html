@@ -1,7 +1,7 @@
-<form class="form-inline" #f="ngForm" (ngSubmit)="search()">
-    <input class="form-control mr-sm-2" type="text" id="name" name="name"
+<form class="form-inline row" #f="ngForm" (ngSubmit)="search()">
+    <input class="form-control col-md-10 " type="text" id="name" name="name"
     placeholder="Search" required [(ngModel)]="model.name" #name="ngModel">
-    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn btn-primary col-md-2" type="submit">Search</button>
 </form>
 
 <div class="row">
