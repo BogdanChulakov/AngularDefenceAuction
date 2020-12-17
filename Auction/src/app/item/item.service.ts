@@ -29,13 +29,13 @@ export class ItemService {
     );
   }
   getDetails(id:string){
-    return this.http.get(`${apiUrl}/item/details/${id}`,{ withCredentials: true }).pipe(
+    return this.http.get(`${apiUrl}/item/details/${id}`,{ withCredentials: false }).pipe(
       tap(item => {})
     );
   }
-  getAll(){
-    return this.http.get(`${apiUrl}/item/all`).pipe(
-      tap(item=> console.log(item))
+  getAll(data:any){
+    return this.http.get(`${apiUrl}/item/all`,data).pipe(
+      tap(items=> console.log(items))
     );
   }
   getMyItems(){

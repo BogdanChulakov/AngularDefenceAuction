@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-3 "></div>
     <div class="col-md-6 card text-white  bg-dark">
@@ -7,43 +8,28 @@
             <p class="card-text">Price : {{model.price}} $</p>
             <p id="demo"></p>
             <p id="date">Valid until: {{model.timeLimit | date}}</p>
+            <p id="date1" hidden>{{model.timeLimit}}</p>
             <img src="{{model.imageUrl}}" width="500">
-            <div class="row">
-                <div class="col-md-6">
-                    <button class="btn btn-primary" *ngIf="isLogged" routerLink="/item/edit/{{model['_id']}}">Edit</button>
+            <div *ngIf="isLogged">
+                
+                <div class="row" *ngIf="isCreator">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" routerLink="/item/edit/{{model['_id']}}">Edit</button>
+                    </div>
+                    <div class="col-md-6 ">
+                        <button class="btn btn-primary float-right"
+                            routerLink="/offer/getAllOffers/{{model['_id']}}">Offers</button>
+                    </div>
                 </div>
-                <div class="col-md-6 ">
-                    <button class="btn btn-primary float-right" *ngIf="isLogged" routerLink="/offer/getAllOffers/{{model['_id']}}">Offers</button>
+                <div class="row" *ngIf="!isCreator">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" routerLink="/offer/create/{{model['_id']}}">Make an
+                            offer!</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-
-    var date = document.getElementById("date").textContent;
-
-    var countDownDate = new Date(date).getTime();
-
-    var x = setInterval(function () {
-
-        var now = new Date().getTime();
-
-        var distance = countDownDate - now;
-
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-
-</script>
+<script src="./scr.js"></script>

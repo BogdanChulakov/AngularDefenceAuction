@@ -4,7 +4,7 @@ function getItems(req, res, next) {
 
     const dateNow = new Date().toJSON();
 
-    itemModel.find({ timeLimit: { $gte: dateNow } })
+    itemModel.find({timeLimit: { $gte: dateNow } })
         .then(items => res.json(items))
         .catch(next);
 }

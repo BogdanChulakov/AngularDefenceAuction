@@ -1,12 +1,18 @@
-<div class="row">   
-    <div class="col-md-3 card"  *ngFor="let item of allItems" style="width: 18rem;">
+<form class="form-inline" #f="ngForm" (ngSubmit)="search()">
+    <input class="form-control mr-sm-2" type="text" id="name" name="name"
+    placeholder="Search" required [(ngModel)]="model.name" #name="ngModel">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="row">
+    <div class="col-md-3 card" *ngFor="let item of allItems" style="width: 18rem;">
         <a class="lightbox" href="{{item.imageUrl}}">
             <img class="card-img-top mt-2" src="{{item.imageUrl}}" alt="Card image cap" height="200">
         </a>
         <div class="card-body">
             <h5 class="card-title">{{item.name}}</h5>
             <p class="card-text">Price: {{item.price}} $</p>
-            <a *ngIf="isLogged" class="btn btn-primary" routerLink="/offer/create/{{item._id}}">Make an offer!</a>
+            <a class="btn btn-primary" routerLink="/item/details/{{item._id}}">Details</a>
         </div>
     </div>
 </div>

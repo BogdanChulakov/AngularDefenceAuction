@@ -1,10 +1,17 @@
 h1{
-    margin-block: 30px;
+    margin: 30px;
     text-align:center;
     color: black;
+    font-family:'Times New Roman', Times, serif;
 }
-p{
+.myClass{
     size: 40px;
     color: black;
-    margin-block: 30px;
+    margin: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+.aa{
+    text-align: right;
 }

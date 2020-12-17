@@ -4,6 +4,7 @@ export class ItemModel {
         public description: string,
         public imageUrl: string,
         public price: number,
-        public timeLimit: string
+        public timeLimit: string,
+        public userId: string
     ) { }
 }

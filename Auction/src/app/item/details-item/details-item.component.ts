@@ -11,17 +11,20 @@ import { ItemService } from '../item.service';
   styleUrls: ['./details-item.component.css']
 })
 export class DetailsItemComponent implements OnInit {
+  
   id: string;
   model: ItemModel;
+  isCreator: boolean;
 
   get isLogged(): boolean {
     return this.authService.isLogged;
   }
+
   constructor(
     private route: ActivatedRoute,
     private itemService: ItemService,
     private authService: AuthService) {
-    this.model = new ItemModel('', '', '', 0, '');
+    this.model = new ItemModel('', '', '', 0, '','');
   }
 
   ngOnInit(): void {
@@ -31,6 +34,7 @@ export class DetailsItemComponent implements OnInit {
     this.itemService.getDetails(this.id).subscribe({
       next: (item: ItemModel) => {
         this.model = item;
+        this.isCreator=this.authService.currentUser._id===item.userId;
       },
       error: (err) => {
         console.error(err);
