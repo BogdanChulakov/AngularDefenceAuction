@@ -5,6 +5,7 @@ import { LoginComponent } from './autentication/login/login.component';
 import { RegisterComponent } from './autentication/register/register.component';
 import { UserDetailsComponent } from './autentication/user-details/user-details.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AuthenticatedRoute } from './core/guards/authenticated-route.service';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -15,8 +16,8 @@ const routes: Routes = [
   { path: '',pathMatch:'full', redirectTo:'home' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: UserDetailsComponent },
-  { path: 'editProfile', component: EditProfileComponent },
+  { path: 'profile', component: UserDetailsComponent, canActivate: [AuthenticatedRoute]  },
+  { path: 'editProfile', component: EditProfileComponent, canActivate: [AuthenticatedRoute]  },
   { path: 'register', component: RegisterComponent },
 ]
  }
