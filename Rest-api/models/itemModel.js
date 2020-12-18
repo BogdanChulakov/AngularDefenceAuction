@@ -4,19 +4,23 @@ const { ObjectId } = mongoose.Schema.Types;
 const itemSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        minlength:3
     },
     description: {
         type: String,
-        required: true
+        required: true,
+        minlength:20
     },
     imageUrl: {
         type: String,
-        required: true
+        required: true,
+        type:URL
     },
     price: {
         type: Number,
-        required: true
+        required: true,
+        minimum: 0
     },
     timeLimit:{
         type:Date,
@@ -36,10 +40,5 @@ const itemSchema = new mongoose.Schema({
     }
 }, { timestamps: { createdAt: 'created_at' } });
 
-itemSchema.methods = {
-    isCreator: function (userId) {
-        return userId === this.userId;
-    }
-}
 
 module.exports = mongoose.model('Item', itemSchema);

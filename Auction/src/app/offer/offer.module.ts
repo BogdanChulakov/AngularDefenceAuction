@@ -7,6 +7,7 @@ import { OfferService } from './offer.service';
 import { ItemService } from '../item/item.service';
 import { MyOffersComponent } from './my-offers/my-offers.component';
 import { AllOffersComponent } from './all-offers/all-offers.component';
+import { AuthenticatedRoute } from '../core/guards/authenticated-route.service';
 
 
 
@@ -23,7 +24,8 @@ import { AllOffersComponent } from './all-offers/all-offers.component';
   ],
   providers: [
     ItemService,
-    OfferService
+    OfferService,
+    AuthenticatedRoute
   ],
 })
 export class OfferModule { }

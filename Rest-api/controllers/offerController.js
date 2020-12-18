@@ -39,6 +39,7 @@ function getMyOffers(req, res, next) {
     const userId = req.user.id;
 
     offerModel.find({ userId: userId })
+        .sort([['created_at', -1]])
         .populate('itemId')
         .populate('userId')
         .then(offers =>

@@ -9,6 +9,7 @@ import { DetailsItemComponent } from './details-item/details-item.component';
 import { MyItemComponent } from './my-item/my-item.component';
 import { ItemService } from './item.service';
 import { DeleteItemComponent } from './delete-item/delete-item.component';
+import { AuthenticatedRoute } from '../core/guards/authenticated-route.service';
 
 
 
@@ -27,7 +28,8 @@ import { DeleteItemComponent } from './delete-item/delete-item.component';
     FormsModule
   ],
   providers: [
-    ItemService
+    ItemService,
+    AuthenticatedRoute
   ],
   exports: [
   ]
