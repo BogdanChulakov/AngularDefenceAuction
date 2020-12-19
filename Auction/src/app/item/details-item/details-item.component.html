@@ -6,7 +6,7 @@
         <div class="card-body">
             <p class="card-text">Description: {{model.description}}</p>
             <p class="card-text">Price : {{model.price}} $</p>
-            <p id="date">Valid until: {{model.timeLimit | date}}</p>
+            <p id="date">Valid until: {{model.timeLimit | date:'medium'}}</p>
             <img src="{{model.imageUrl}}" width="500">
             <div *ngIf="isLogged">
                 
