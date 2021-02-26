@@ -16,6 +16,7 @@ import { OfferModule } from './offer/offer.module';
 import { UserDetailsComponent } from './autentication/user-details/user-details.component';
 import { EditProfileComponent } from './autentication/edit-profile/edit-profile.component';
 import { AuthenticatedRoute } from './core/guards/authenticated-route.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthenticatedRoute } from './core/guards/authenticated-route.service';
     FormsModule,
     HttpClientModule,
     ItemModule,
-    OfferModule
+    OfferModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,

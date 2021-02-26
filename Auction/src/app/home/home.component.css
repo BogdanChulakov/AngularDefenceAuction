@@ -11,6 +11,11 @@ h1{
     font-size: 30px;
     text-align: center;
     font-family:'Times New Roman', Times, serif;
+    border: solid;
+
+}
+.myDiv{
+    text-align: center;
 }
 .aa{
     text-align: right;
