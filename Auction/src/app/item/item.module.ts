@@ -10,6 +10,7 @@ import { MyItemComponent } from './my-item/my-item.component';
 import { ItemService } from './item.service';
 import { DeleteItemComponent } from './delete-item/delete-item.component';
 import { AuthenticatedRoute } from '../core/guards/authenticated-route.service';
+import { ShortenPipe } from '../core/pipes/shorten.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { AuthenticatedRoute } from '../core/guards/authenticated-route.service';
     EditItemComponent,
     DetailsItemComponent,
     MyItemComponent,
-    DeleteItemComponent
+    DeleteItemComponent,
+    ShortenPipe
   ],
   imports: [
     CommonModule,
