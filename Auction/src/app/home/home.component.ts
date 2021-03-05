@@ -12,11 +12,11 @@ import { trigger, transition, animate, state, style } from '@angular/animations'
         transform:'translateX(-100px)',
         backgroundColor: 'red'
       })),
-      state('blue', style({
-        backgroundColor: 'blue'
+      state('gray', style({
+        backgroundColor: 'dimgrey'
       })),
-      transition('red => blue', animate(1200)),
-      transition('blue => red', animate(3000))
+      transition('red => gray', animate(1200)),
+      transition('gray => red', animate(3000))
     ]),
     trigger('h1State',[
       transition('void => *', [
@@ -39,6 +39,6 @@ export class HomeComponent implements OnInit {
   }
 
   onAnimete() {
-    this.state == "red" ? this.state="blue" : this.state="red"
+    this.state == "red" ? this.state="gray" : this.state="red"
   }
 }
