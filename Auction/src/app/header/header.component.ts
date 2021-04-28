@@ -13,11 +13,12 @@ export class HeaderComponent implements OnInit {
   get isLogged(): boolean {
     return this.authService.isLogged;
   }
-
+  
   constructor(
     private authService: AuthService,
     private router: Router
-  ) { }
+    ) { 
+    }
 
   logoutHandler(): void {
     this.email=null;
@@ -25,9 +26,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.getCurrentUserProfile().subscribe(user => {
-      this.email = user.email;
-    })
+ 
+      this.authService.getCurrentUserProfile().subscribe(user => {
+        this.email = user.email;
+      })
+
   }
 
 }

@@ -10,3 +10,6 @@ h3{
 .btn{
     margin: 13px;
 }
+.form-control.ng-dirty.ng-invalid{
+    border: 2px solid red;
+}
