@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { OfferService } from '../offer.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class AllOffersComponent implements OnInit {
   itemId: string;
   allOffers: any[];
   errorMessage: string;
+  haveOffers: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,8 @@ export class AllOffersComponent implements OnInit {
     this.offerService.getAllOffers(this.itemId)
       .subscribe({
         next: (offers: any[]) => {
+          if (offers.length > 0)
+            this.haveOffers = true;
           this.allOffers = offers
         },
         error: (err) => {

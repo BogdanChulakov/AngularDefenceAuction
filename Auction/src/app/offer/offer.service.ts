@@ -24,12 +24,12 @@ export class OfferService {
   }
   getMyOffers(){
     return this.http.get(`${apiUrl}/offer/getMyOffers`,  { withCredentials: true }).pipe(
-      tap(offer => console.log (offer))
+      tap(offer =>  console.log("OK"))
     );
   }
   getAllOffers(itemId:string){
     return this.http.get(`${apiUrl}/offer/getAllOffers/${itemId}`,  { withCredentials: true }).pipe(
-      tap(offer => console.log (offer))
+      tap(offer => console.log("OK"))
     );
   }
 }

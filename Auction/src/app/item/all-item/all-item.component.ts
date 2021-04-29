@@ -14,19 +14,29 @@ export class AllItemComponent implements OnInit {
   get isLogged(): boolean {
     return this.authService.isLogged;
   }
-  model:SearchModel;
+  model: SearchModel;
   errorMessage: string;
+  haveItems: boolean;
+  haveSearchedItems: boolean;
+
 
   constructor(
     private itemService: ItemService,
     private authService: AuthService) {
-      this.model=new SearchModel('')
-    }
+    this.model = new SearchModel('')
+  }
 
   ngOnInit(): void {
     this.itemService.getAll({}).subscribe({
       next: (items) => {
+
         this.allItems = items;
+        if (this.allItems.length > 0) {
+          this.haveItems = true;
+          this.haveSearchedItems = true;
+        }
+
+
       },
       error: (err) => {
         console.error(err);
@@ -37,10 +47,16 @@ export class AllItemComponent implements OnInit {
     console.log(this.model)
     this.itemService.getSearchItems(this.model).subscribe({
       next: (items) => {
-        this.allItems=items;
+        this.allItems = items;
+        if (this.allItems.length == 0){
+          this.haveSearchedItems = false;
+
+        }else{
+          this.haveSearchedItems=true;
+        }
       },
       error: (err) => {
-       this.errorMessage=err.error;
+        this.errorMessage = err.error;
       }
     })
   }

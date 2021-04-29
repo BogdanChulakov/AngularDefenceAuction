@@ -15,10 +15,10 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                    name="password" [(ngModel)]="model.password" #password="ngModel" required>
-                <div [hidden]="password.value.length > 0 || password.pristine" class="alert alert-danger">
-                    Password is required!
-                </div>
+                    required name="password" [(ngModel)]="model.password" #password="ngModel" required>
+                    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                        Password is required!
+                    </div>
             </div>
             <div class="alert alert-danger" *ngIf="errMessage">{{errMessage}}</div>
             <button type="submit" class="btn btn-primary" [disabled]="loginForm.form.invalid">Submit</button>

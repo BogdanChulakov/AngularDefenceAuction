@@ -4,8 +4,8 @@
     <button class="btn btn-primary col-md-2" type="submit">Search</button>
 </form>
 
-<div class="alert alert-danger" *ngIf="allItems.length===0">No items</div>
-
+<div class="alert alert-danger" *ngIf="!haveItems">No items</div>
+<div class="alert alert-danger" *ngIf="!haveSearchedItems && haveItems">No items for this search!</div>
 <div class="row">
     <div class="col-md-3 card" *ngFor="let item of allItems" style="width: 18rem;">
         <a class="lightbox" href="{{item.imageUrl}}">

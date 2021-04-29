@@ -34,7 +34,7 @@ export class DetailsItemComponent implements OnInit {
     this.itemService.getDetails(this.id).subscribe({
       next: (item: DetailsModel) => {
         this.model = item;
-        this.isCreator = this.authService.currentUser._id === item.userId;
+        this.isCreator = this.authService.currentUser["_id"]=== item.userId;
       },
       error: (err) => {
         console.error(err);

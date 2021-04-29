@@ -30,27 +30,27 @@ export class ItemService {
   }
   delete(id:string): Observable<any> {
     return this.http.post(`${apiUrl}/item/delete/${id}`,{},{ withCredentials: true }).pipe(
-      tap(msg => msg)
+      tap(msg => console.log("ok"))
     );
   }
   getDetails(id:string){
     return this.http.get(`${apiUrl}/item/details/${id}`,{ withCredentials: false }).pipe(
-      tap(item => {})
+      tap(item => console.log("ok"))
     );
   }
   getAll(data:any){
     return this.http.get(`${apiUrl}/item/all`,data).pipe(
-      tap(items=> console.log(items))
+      tap(items=> console.log("ok"))
     );
   }
   getSearchItems(data:any){
     return this.http.get(`${apiUrl}/item/search/${data.name}`).pipe(
-      tap(items=> console.log(items))
+      tap(items=> console.log("ok"))
     );
   }
   getMyItems(){
     return this.http.get(`${apiUrl}/item/myItems`,{ withCredentials: true }).pipe(
-      tap(items=> console.log(items))
+      tap(items=> console.log("ok"))
     );
   }
 }

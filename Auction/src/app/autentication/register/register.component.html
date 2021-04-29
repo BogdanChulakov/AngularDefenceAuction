@@ -6,7 +6,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"
-                placeholder="Enter Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required [(ngModel)]="model.email" #email="ngModel">
+                required placeholder="Enter Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required [(ngModel)]="model.email" #email="ngModel">
                 <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
                 <div *ngIf="email.errors.pattern">Email is not valid!</div>
                 <div *ngIf="email.errors.required">Email is required!</div>                       
@@ -14,19 +14,25 @@
         </div>
         <div class="form-group">
             <label for="exampleInputFirstName">First name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp"
-                placeholder="Enter First name"  required [(ngModel)]="model.firstName" #firstName="ngModel">
-            <div [hidden]="firstName.value.length >= 2 || firstName.pristine" class="alert alert-danger">
-                First name must be at lest 2 characters!
-            </div>
+            <input type="text" 
+            class="form-control" id="firstName" name="firstName" 
+            minlength="2"
+            aria-describedby="firstNameHelp"
+                placeholder="Enter First name"  
+                required [(ngModel)]="model.firstName" #firstName="ngModel">
+                <div *ngIf="!firstName.valid && firstName.touched" class="alert alert-danger">
+                    <div *ngIf="firstName.errors.minlength">First name must be at lest 2 characters!</div>
+                    <div *ngIf="firstName.errors.required">First name is required!</div>                       
+                </div>
         </div>
         <div class="form-group">
             <label for="exampleInputLastName">Last name</label>
             <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp"
-                placeholder="Enter last name"  required [(ngModel)]="model.lastName" #lastName="ngModel">
-            <div [hidden]="lastName.value.length >= 2 || lastName.pristine" class="alert alert-danger">
-                Last name must be at lest 2 characters!
-            </div>
+                minlength="2" placeholder="Enter last name"  required [(ngModel)]="model.lastName" #lastName="ngModel">
+                <div *ngIf="!lastName.valid && lastName.touched" class="alert alert-danger">
+                    <div *ngIf="lastName.errors.minlength">Last name must be at lest 2 characters!</div>
+                    <div *ngIf="lastName.errors.required">Last name is required!</div>                       
+                </div>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Phone number</label>
@@ -40,7 +46,7 @@
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password"
-                required [(ngModel)]="model.password" #password="ngModel" minlength="3">
+                minlength="3" required [(ngModel)]="model.password" #password="ngModel" minlength="3">
                 <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
                     Password must be at lest 3 characters!
                 </div>

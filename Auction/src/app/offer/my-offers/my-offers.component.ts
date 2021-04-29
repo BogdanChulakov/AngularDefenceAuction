@@ -9,13 +9,17 @@ import { OfferService } from '../offer.service';
 export class MyOffersComponent implements OnInit {
 
   offers: any[];
+  haveOffers: boolean;
 
   constructor(private offerService: OfferService) { }
 
   ngOnInit(): void {
     this.offerService.getMyOffers().subscribe((offers: any[]) => {
+      if (offers.length > 0)
+        this.haveOffers = true;
       this.offers = offers;
     })
+
   }
 
 }

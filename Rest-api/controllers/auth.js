@@ -54,7 +54,7 @@ function login(req, res, next) {
         .then(([user, match]) => {
             if (!match) {
                 res.status(401)
-                    .send({ message: 'Wrong emeil or password' });
+                    .send({ message: 'Wrong email or password!' });
                 return
             }
             user = bsonToJson(user);

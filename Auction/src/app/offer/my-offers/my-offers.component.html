@@ -2,7 +2,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2>My offers</h2>
-        <div class="alert alert-warning" *ngIf="offers.length===0">You have not yet created an offer!</div>
+        <div class="alert alert-warning" *ngIf="!haveOffers">You have not yet created an offer!</div>
         <div class="myDiv row" *ngFor="let offer of offers">
             <img  src="{{offer.itemId.imageUrl}}"  height="100" width="100">
             <div class="col-md-5">
