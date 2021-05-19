@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,8 @@ import { UserDetailsComponent } from './autentication/user-details/user-details.
 import { EditProfileComponent } from './autentication/edit-profile/edit-profile.component';
 import { AuthenticatedRoute } from './core/guards/authenticated-route.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateConfigService } from './translate-config.service';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +39,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ItemModule,
     OfferModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderfactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     AuthService,
     AuthGuard,
-    AuthenticatedRoute
+    AuthenticatedRoute,
+    TranslateConfigService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderfactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

@@ -6,37 +6,47 @@
     </button>
 
     <div class="collapse navbar-collapse row" id="navbarColor02">
-        <div class="col-md-8">
+        <div class="col-md-7">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" routerLink="">Home
+                <a class="nav-link" routerLink="">{{'header.home' | translate}}
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" routerLink="/item/create">Create item</a>
+                <a class="nav-link" routerLink="/item/create">{{'header.createItem' | translate}}</a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" routerLink="/item/myItems">My Items</a>
+                <a class="nav-link" routerLink="/item/myItems">{{'header.myItems' | translate}}</a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" routerLink="/offer/myOffers">My offers</a>
+                <a class="nav-link" routerLink="/offer/myOffers">{{'header.myOffers' | translate}}</a>
             </li>
         </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
+        <div class="float-lg-right">
+        <select (change)="changeLanguage($event)">
+            <option value="bg">BG
+            </option>
+            <option value="en">EN
+            </option>
+        </select>
+        <p *ngIf="bg" style="float:right"><span class="flag-icon flag-icon-bg"></span></p>
+        <p *ngIf="en" style="float:right"><span class="flag-icon flag-icon-gb"></span></p>
+    </div>
         <ul class="navbar-nav mr-auto float-lg-right">
             <li class="nav-item" *ngIf="email">
-                <a class="nav-link" routerLink="/profile">Hello {{email}}!</a>
+                <a class="nav-link" routerLink="/profile">{{'header.hello' | translate}} {{email}}!</a>
             </li>
             <li class="nav-item" *ngIf="!isLogged">
-                <a class="nav-link" routerLink="/login">Login</a>
+                <a class="nav-link" routerLink="/login">{{'header.login' | translate}}</a>
             </li>
             <li class="nav-item" *ngIf="!isLogged">
-                <a class="nav-link" routerLink="/register">Register</a>
+                <a class="nav-link" routerLink="/register">{{'header.register' | translate}}</a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link"(click)="logoutHandler()">Logout</a>
+                <a class="nav-link"(click)="logoutHandler()">{{'header.logout' | translate}}</a>
             </li>
         </ul>
     </div>

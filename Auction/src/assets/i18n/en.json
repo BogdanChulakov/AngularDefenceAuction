@@ -1,0 +1,12 @@
+{
+    "header": {
+        "home": "Home",
+        "createItem": "Create item",
+        "myItems": "My items",
+        "myOffers":"My offers",
+        "hello":"Hello",
+        "login":"Login",
+        "logout":"Logout",
+        "register":"Register"
+    }
+}
