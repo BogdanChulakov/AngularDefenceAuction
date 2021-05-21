@@ -1,11 +1,11 @@
 <form class="form-inline row" #f="ngForm" (ngSubmit)="search()">
     <input class="form-control col-md-10 " type="text" id="name" name="name"
-    placeholder="Search" required [(ngModel)]="model.name" #name="ngModel">
-    <button class="btn btn-primary col-md-2" type="submit">Search</button>
+    placeholder="{{'auction.search' | translate}}" required [(ngModel)]="model.name" #name="ngModel">
+    <button class="btn btn-primary col-md-2" type="submit">{{'auction.search' | translate}}</button>
 </form>
 
-<div class="alert alert-danger" *ngIf="!haveItems">No items</div>
-<div class="alert alert-danger" *ngIf="!haveSearchedItems && haveItems">No items for this search!</div>
+<div class="alert alert-danger" *ngIf="!haveItems">{{'auction.noItems' | translate}}</div>
+<div class="alert alert-danger" *ngIf="!haveSearchedItems && haveItems">{{'auction.serachResultMessage' | translate}}</div>
 <div class="row">
     <div class="col-md-3 card" *ngFor="let item of allItems" style="width: 18rem;">
         <a class="lightbox" href="{{item.imageUrl}}">
@@ -13,8 +13,8 @@
         </a>
         <div class="card-body">
             <h5 class="card-title">{{item.name}}</h5>
-            <p class="card-text">Price: {{item.price}} $</p>
-            <a class="btn btn-primary" routerLink="/item/details/{{item._id}}">Details</a>
+            <p class="card-text">{{'auction.price' | translate}}: {{item.price}} $</p>
+            <a class="btn btn-primary" routerLink="/item/details/{{item._id}}">{{'auction.details' | translate}}</a>
         </div>
     </div>
 </div>

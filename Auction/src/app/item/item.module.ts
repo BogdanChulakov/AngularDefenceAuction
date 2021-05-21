@@ -11,6 +11,9 @@ import { ItemService } from './item.service';
 import { DeleteItemComponent } from './delete-item/delete-item.component';
 import { AuthenticatedRoute } from '../core/guards/authenticated-route.service';
 import { ShortenPipe } from '../core/pipes/shorten.pipe';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
@@ -27,7 +30,14 @@ import { ShortenPipe } from '../core/pipes/shorten.pipe';
   imports: [
     CommonModule,
     ItemRouterModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderfactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     ItemService,
@@ -37,3 +47,6 @@ import { ShortenPipe } from '../core/pipes/shorten.pipe';
   ]
 })
 export class ItemModule { }
+export function HttpLoaderfactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

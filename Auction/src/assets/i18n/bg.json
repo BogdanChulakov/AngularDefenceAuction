@@ -8,5 +8,12 @@
         "login":"Вход",
         "logout":"Изход",
         "register":"Регисрация"
+    },
+    "auction":{
+        "search": "Търсене",
+        "details": "Детайли",
+        "price": "Цена",
+        "serachResultMessage":"Няма елементи за това търсене!",
+        "noItems":"Няма елементи!"
     }
 }
