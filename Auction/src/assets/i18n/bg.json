@@ -22,5 +22,17 @@
         "email":"Имейл",
         "phoneNumber":"Телефонен номер",
         "editProfile":"Редактирай"
+    },
+    "editProfile":{
+        "editProfile":"Редактирай профил",
+        "firstName":"Име",
+        "lastName":"Фамилия",
+        "phoneNumber":"Телефонен номер",
+        "submit":"Запази",
+        "firstNameAlert2Char":"Името трябва да съдържа поне 2 знака!",
+        "firstNameAlertRequired":"Името е задължително!",
+        "lastNameAlert2Char":"Фамилията трябва да съдържа поне 2 знака!",
+        "lastNameAlertRequired":"Фамилията е задължителна!",
+        "phoneNumberAlert":"Невалиден телефонен номер!"
     }
 }

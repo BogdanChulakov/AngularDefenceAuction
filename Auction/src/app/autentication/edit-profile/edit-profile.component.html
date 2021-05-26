@@ -1,36 +1,36 @@
-<h3>Edit profile</h3>
+<h3>{{'editProfile.editProfile' | translate}}</h3>
 <div class="row">
     <div class="col-md-3"></div>
     <form class="col-md-6" #f="ngForm" (ngSubmit)="edit()">
         <fieldset>
             <div class="form-group">
-                <label for="exampleInputFirstName">First name</label>
+                <label for="exampleInputFirstName">{{'editProfile.firstName' | translate}}</label>
                 <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp"
                     placeholder="Enter First name" required  minlength="2" [(ngModel)]="model.firstName" #firstName="ngModel">
                     <div *ngIf="!firstName.valid && firstName.touched" class="alert alert-danger">
-                        <div *ngIf="firstName.errors.minlength">First name must be at lest 2 characters!</div>
-                        <div *ngIf="firstName.errors.required">First name is required!</div>                       
+                        <div *ngIf="firstName.errors.minlength">{{'editProfile.firstNameAlert2Char' | translate}}</div>
+                        <div *ngIf="firstName.errors.required">{{'editProfile.firstNameAlertRequired' | translate}}</div>                       
                     </div>
             </div>
             <div class="form-group">
-                <label for="exampleInputLastName">Last name</label>
+                <label for="exampleInputLastName">{{'editProfile.lastName' | translate}}</label>
                 <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp"
                     placeholder="Enter last name" required  minlength="2" [(ngModel)]="model.lastName" #lastName="ngModel">
                     <div *ngIf="!lastName.valid && lastName.touched" class="alert alert-danger">
-                        <div *ngIf="lastName.errors.minlength">Last name must be at lest 2 characters!</div>
-                        <div *ngIf="lastName.errors.required">Last name is required!</div>                       
+                        <div *ngIf="lastName.errors.minlength">{{'editProfile.lastNameAlert2Char' | translate}}</div>
+                        <div *ngIf="lastName.errors.required">{{'editProfile.lastNameAlertRequired' | translate}}</div>                       
                     </div>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Phone number</label>
+                <label for="exampleInputEmail1">{{'editProfile.phoneNumber' | translate}}</label>
                 <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
                     aria-describedby="phoneNumber" placeholder="Enter Phone Number" required pattern="^[0-9]+$"
                     [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel">
                 <div [hidden]="phoneNumber.valid || phoneNumber.pristine" class="alert alert-danger">
-                    Invalid Phone number!
+                    {{'editProfile.phoneNumberAlert' | translate}}
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid">{{'editProfile.submit' | translate}}</button>
         </fieldset>
     </form>
 </div>

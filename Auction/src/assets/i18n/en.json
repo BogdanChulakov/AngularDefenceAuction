@@ -22,5 +22,17 @@
         "email":"Email",
         "phoneNumber":"Phone number",
         "editProfile":"Edit"
+    },
+    "editProfile":{
+        "editProfile":"Еdit profile",
+        "firstName":"First Name",
+        "lastName":"Last Name",
+        "phoneNumber":"Phone number",
+        "submit":"submit",
+        "firstNameAlert2Char":"First name must be at lest 2 characters!",
+        "firstNameAlertRequired":"First name is required!",
+        "lastNameAlert2Char":"Last name must be at lest 2 characters!",
+        "lastNameAlertRequired":"Last name is required!",
+        "phoneNumberAlert":"Invalid Phone number!"
     }
 }
