@@ -1,9 +1,9 @@
-<h3>Your profile</h3>
+<h3>{{'profile.profile' | translate}}</h3>
 <div class="myClass row">
     <div class="col-md-6">
-        <p>Name: {{user.firstName}} {{user.lastName}} </p>
-        <p>Email: {{user.email}}</p>
-        <p>Phone number: {{user.phoneNumber}}</p>
-        <button class="btn btn-primary " routerLink="/editProfile">Edit prifile</button>
+        <p>{{'profile.names' | translate}}: {{user.firstName}} {{user.lastName}} </p>
+        <p>{{'profile.email' | translate}}: {{user.email}}</p>
+        <p>{{'profile.phoneNumber' | translate}}: {{user.phoneNumber}}</p>
+        <button class="btn btn-primary " routerLink="/editProfile">{{'profile.editProfile' | translate}}</button>
     </div>
 </div>

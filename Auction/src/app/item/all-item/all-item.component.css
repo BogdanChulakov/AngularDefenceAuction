@@ -1,29 +1,54 @@
 .card{
     text-align:center;
-    margin:30px;
     background-color:dimgrey;
     color:lightcyan;
     border-style: solid;
     border-color: black;
 }
 .row{
-    margin-left: 100px;
+    margin-left: 110px;
+    box-sizing: border-box;
 }
 img{
     border-style: solid;
     border-color: black;
 }
 .form-inline{
-    margin-left: 131px;
-    margin-right: 150px;
+    width: 80%;
+    margin: auto;
     margin-top:30px;
     border: solid;
   
 }
 .alert{
-    margin-left: 131px;
-    margin-right: 150px;
-    margin-top: 30px;
+    width: 80%;
+    margin: auto;
+    margin-top:30px;
     border: solid;
     text-align: center;
+}
+.myDiv:hover{
+    border: red 1px;
+    border-style: solid;
+
+}
+.myDiv{
+    float: left;
+    width: 29%;
+    margin: 2%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5%;
+
+}
+#all{
+    width: 80%;
+    margin: auto;
+}
+.card-body a{
+    box-sizing: border-box;
+    border-radius: 10%;
+}
+form>input{
+    flex: auto;
 }

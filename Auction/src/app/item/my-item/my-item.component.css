@@ -2,6 +2,9 @@
     color: lightcyan;
     border: solid;
     border-color: black;
+
+    margin: auto;
+ 
 }
 .card-header{
     background-color: darkgray;

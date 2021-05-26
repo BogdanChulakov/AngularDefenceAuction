@@ -15,5 +15,12 @@
         "price": "Price",
         "serachResultMessage":"No items for this search!",
         "noItems":"No items!"
+    },
+    "profile":{
+        "profile":"Profile",
+        "names":"Names",
+        "email":"Email",
+        "phoneNumber":"Phone number",
+        "editProfile":"Edit"
     }
 }

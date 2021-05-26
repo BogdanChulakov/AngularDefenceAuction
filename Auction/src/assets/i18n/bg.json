@@ -15,5 +15,12 @@
         "price": "Цена",
         "serachResultMessage":"Няма елементи за това търсене!",
         "noItems":"Няма елементи!"
+    },
+    "profile":{
+        "profile":"Профил",
+        "names":"Имена",
+        "email":"Имейл",
+        "phoneNumber":"Телефонен номер",
+        "editProfile":"Редактирай"
     }
 }
