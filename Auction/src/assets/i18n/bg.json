@@ -34,5 +34,41 @@
         "lastNameAlert2Char":"Фамилията трябва да съдържа поне 2 знака!",
         "lastNameAlertRequired":"Фамилията е задължителна!",
         "phoneNumberAlert":"Невалиден телефонен номер!"
+    },
+    "login":{
+        "login":"Вход",
+        "emailAddress":"Имейл адрес" ,
+        "enterEmail":"Въведи имейл",
+        "password":"Парола",
+        "enterPass":"Въведи парола",
+        "submit":"Изпрати",
+        "emailIsValid":"Имейла не е валиден!",
+        "emailIsRequired":"Имейла е задължителен!",
+        "passwordIsRequired":"Паролата е задължителна!"
+    },
+    "register":{
+        "register":"Регистрация",
+        "emailAddress":"Имейл адрес" ,
+        "enterEmail":"Въведи имейл",
+        "password":"Парола",
+        "enterPass":"Въведи парола",
+        "submit":"Изпрати",
+        "emailIsValid":"Имейла не е валиден!",
+        "emailIsRequired":"Имейла е задължителен!",
+        "passwordIsRequired":"Паролата е задължителна!",
+        "firstName":"Име",
+        "enterFirstName":"Въведи име",
+        "lastName":"Фамилия",
+        "enterLastName":"Въведи фамилия",
+        "phoneNumber":"Телефонен номер",
+        "enterPhoneNumber":"Въведи телефонен номер",
+        "firstNameAlert2Char":"Името трябва да съдържа поне 2 знака!",
+        "firstNameAlertRequired":"Името е задължително!",
+        "lastNameAlert2Char":"Фамилията трябва да съдържа поне 2 знака!",
+        "lastNameAlertRequired":"Фамилията е задължителна!",
+        "phoneNumberAlert":"Невалиден телефонен номер!",
+        "passwordAlert":"Паролата трябва да съдържа поне 3 знака!",
+        "repeatPassword":"Повтори парола",
+        "repeatPasswordAlert":"Паролите трябва да съвпадат!"
     }
 }

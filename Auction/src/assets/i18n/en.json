@@ -34,5 +34,41 @@
         "lastNameAlert2Char":"Last name must be at lest 2 characters!",
         "lastNameAlertRequired":"Last name is required!",
         "phoneNumberAlert":"Invalid Phone number!"
+    },
+    "login":{
+        "login":"Login",
+        "emailAddress":"Email аddress" ,
+        "enterEmail":"Enter email",
+        "password":"Password",
+        "enterPass":"Enter password",
+        "submit":"Submit",
+        "emailIsValid":"Email is not valid!",
+        "emailIsRequired":"Email is required!",
+        "passwordIsRequired":" Password is required!"
+    },
+    "register":{
+        "register":"Register",
+        "emailAddress":"Email аddress" ,
+        "enterEmail":"Enter email",
+        "password":"Password",
+        "enterPass":"Enter password",
+        "submit":"Submit",
+        "emailIsValid":"Email is not valid!",
+        "emailIsRequired":"Email is required!",
+        "passwordIsRequired":" Password is required!",
+        "firstName":"First Name",
+        "enterFirstName":"Enter first name",
+        "lastName":"Last Name",
+        "enterLastName":"Enter last name",
+        "phoneNumber":"Phone number",
+        "enterPhoneNumber":"Enter phone number",
+        "firstNameAlert2Char":"First name must be at lest 2 characters!",
+        "firstNameAlertRequired":"First name is required!",
+        "lastNameAlert2Char":"Last name must be at lest 2 characters!",
+        "lastNameAlertRequired":"Last name is required!",
+        "phoneNumberAlert":"Invalid Phone number!",
+        "passwordAlert":"Password must be at lest 3 characters!",
+        "repeatPassword":"Repeat password",
+        "repeatPasswordAlert":"Passwords must be match!"
     }
 }
