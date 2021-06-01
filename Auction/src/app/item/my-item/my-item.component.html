@@ -1,6 +1,6 @@
-<h3>ACTIVE ITEMS</h3>
+<h3>{{'my-items.activeItems' | translate}}</h3>
 <hr>
-<div class="alert alert-warning" *ngIf="!haveActiveItems">No items with valid date!</div>
+<div class="alert alert-warning" *ngIf="!haveActiveItems">{{'my-items.noActiveItems' | translate}}</div>
 <div class="card m-4" *ngFor="let item of myActiveItems">
     <div class="card-header">
         <h5>
@@ -16,20 +16,20 @@
                 </div>
                 <div class="col-md-8">
                     <p>{{item.description | shorten: 10}}</p>
-                    <p>Price: {{item.price}} $</p>
+                    <p>{{'my-items.price' | translate}}: {{item.price}} $</p>
                 </div>
                 <div class="col-md-2">
-                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">Delete</a>
+                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">{{'my-items.delete' | translate}}</a>
                 </div>
             </div>
 
         </blockquote>
     </div>
 </div>
-<h3>EXPIRED ITEMS</h3>
+<h3>{{'my-items.expiredItems' | translate}}</h3>
 <hr>
 
-<div class="alert alert-warning" *ngIf="!haveExpiredItems">No items with expired date!</div>
+<div class="alert alert-warning" *ngIf="!haveExpiredItems">{{'my-items.noExpiredItems' | translate}}</div>
 
 <div class="card m-4" *ngFor="let item of expiredItems">
     <div class="card-header">
@@ -45,10 +45,10 @@
                 </div>
                 <div class="col-md-8">
                     <p>{{item.description | shorten: 10}}</p>
-                    <p>Price: {{item.price}} $</p>
+                    <p>{{'my-items.price' | translate}}: {{item.price}} $</p>
                 </div>
                 <div class="col-md-2">
-                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">Delete</a>
+                    <a class="btn btn-danger" routerLink="/item/delete/{{item._id}}">{{'my-items.delete' | translate}}</a>
                 </div>
             </div>
         </blockquote>

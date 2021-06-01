@@ -4,25 +4,24 @@
     <div class="col-md-6 card text-white  bg-dark">
         <h5 class="card-header">{{model.name}}</h5>
         <div class="card-body">
-            <p class="card-text">Description: {{model.description}}</p>
-            <p class="card-text">Price : {{model.price}} $</p>
-            <p id="date">Valid until: {{model.timeLimit | date:'medium'}}</p>
+            <p class="card-text">{{'details-item.description' | translate}}: {{model.description}}</p>
+            <p class="card-text">{{'details-item.price' | translate}} : {{model.price}} $</p>
+            <p id="date">{{'details-item.validUntil' | translate}}: {{model.timeLimit | date:'medium'}}</p>
             <img src="{{model.imageUrl}}" width="500">
             <div *ngIf="isLogged">
                 
                 <div class="row" *ngIf="isCreator">
                     <div class="col-md-6">
-                        <button class="btn btn-primary" routerLink="/item/edit/{{model['_id']}}">Edit</button>
+                        <button class="btn btn-primary" routerLink="/item/edit/{{model['_id']}}">{{'details-item.edit' | translate}}</button>
                     </div>
                     <div class="col-md-6 ">
                         <button class="btn btn-primary float-right"
-                            routerLink="/offer/getAllOffers/{{model['_id']}}">Offers</button>
+                            routerLink="/offer/getAllOffers/{{model['_id']}}">{{'details-item.offers' | translate}}</button>
                     </div>
                 </div>
                 <div class="row" *ngIf="!isCreator">
                     <div class="col-md-6">
-                        <button class="btn btn-primary" routerLink="/offer/create/{{model['_id']}}">Make an
-                            offer!</button>
+                        <button class="btn btn-primary" routerLink="/offer/create/{{model['_id']}}">{{'details-item.makeOffer' | translate}}</button>
                     </div>
                 </div>
             </div>

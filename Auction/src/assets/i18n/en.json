@@ -9,6 +9,11 @@
         "logout":"Logout",
         "register":"Register"
     },
+    "home":{
+        "head":"AUCTION",
+        "info":"Info",
+        "text":"This is an application where everyone can offer their unnecessary things for sale. The user can see all the offers sent to the items offered by him and the highest price will be saved as the price of the item. Also, each user can par- ticipate in auctions of items that he has not created, and can bid repeatedly!"
+    },
     "auction":{
         "search": "Search",
         "details": "Details",
@@ -70,5 +75,29 @@
         "passwordAlert":"Password must be at lest 3 characters!",
         "repeatPassword":"Repeat password",
         "repeatPasswordAlert":"Passwords must be match!"
+    },
+    "my-items":{
+        "activeItems":"Active Items",
+        "expiredItems":"Expired Items",
+        "delete":"delete",
+        "price":"Price",
+        "noActiveItems":"No items with valid date!",
+        "noExpiredItems":"No items with expired date!"
+    },
+    "delete-item":{
+        "name":"Name",
+        "description":"Description",
+        "price":"Price",
+        "deleteQuestion":"Do you want to delete this Item?",
+        "yes":"Yes",
+        "no":"No"
+    },
+    "details-item":{
+        "description":"Description",
+        "price":"Price",
+        "validUntil":"Valid until",
+        "edit":"Edit",
+        "offers":"Offers",
+        "makeOffer":"Make an offer!"
     }
 }

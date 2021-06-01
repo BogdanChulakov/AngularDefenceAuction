@@ -1,15 +1,12 @@
 <div class="container" [@h1State]>
     <div class="page-header">
-        <h1>AUCTION APPLICATON</h1>
+        <h1>{{'home.head' | translate}}</h1>
     </div>
     <div class="myClass" [@divState]="state">
-        <p >This is an application where everyone can offer their unnecessary things for sale.
-            The user can see all the offers sent to the items offered by him and the highest price will be saved as the
-            price of the item.
-            Also, each user can par- ticipate in auctions of items that he has not created, and can bid repeatedly!</p>
+        <p >{{'home.text' | translate}}</p>
     </div>
     <div class="myDiv">
-        <button class="btn btn-primary" (click)="onAnimete()">Info</button>
+        <button class="btn btn-primary" (click)="onAnimete()">{{'home.info' | translate}}</button>
     </div>
 
 </div>
