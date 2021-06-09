@@ -10,3 +10,7 @@ h3{
 .btn{
     margin: 13px;
 }
+.form-control:hover{
+    background-color: gray;
+    cursor: pointer;
+}

@@ -1,13 +1,6 @@
-.card{
-    color: lightcyan;
-    border: solid;
-    border-color: black;
-
+.container{
+    max-width: 80em;
     margin: auto;
- 
-}
-.card-header{
-    background-color: darkgray;
 }
 h3{
     margin-top: 20px;
@@ -15,6 +8,14 @@ h3{
 }
 h5{
     text-align: center;
+}
+.card{
+    color: lightcyan;
+    border: solid;
+    border-color: black;
+}
+.card-header{
+    background-color: darkgray;
 }
 .alert{
     margin-left: 200px;

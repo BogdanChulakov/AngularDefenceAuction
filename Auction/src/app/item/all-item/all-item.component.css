@@ -4,6 +4,15 @@
     color:lightcyan;
     border-style: solid;
     border-color: black;
+    min-width: 80px;
+    float: left;
+    width: 29%;
+    margin: 2%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5%;
+    min-width: 80px;
+
 }
 .row{
     margin-left: 110px;
@@ -27,20 +36,12 @@ img{
     border: solid;
     text-align: center;
 }
-.myDiv:hover{
+.card:hover{
     border: red 1px;
     border-style: solid;
 
 }
-.myDiv{
-    float: left;
-    width: 29%;
-    margin: 2%;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 5%;
 
-}
 #all{
     width: 80%;
     margin: auto;

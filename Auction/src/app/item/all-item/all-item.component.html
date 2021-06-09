@@ -7,7 +7,7 @@
 <div class="alert alert-danger" *ngIf="!haveItems">{{'auction.noItems' | translate}}</div>
 <div class="alert alert-danger" *ngIf="!haveSearchedItems && haveItems">{{'auction.serachResultMessage' | translate}}</div>
 <div id="all">
-    <div class="card myDiv" *ngFor="let item of allItems">
+    <div class="card" *ngFor="let item of allItems">
         <a class="lightbox" href="{{item.imageUrl}}">
             <img class="card-img-top mt-2" src="{{item.imageUrl}}" alt="Card image cap" height="200">
         </a>

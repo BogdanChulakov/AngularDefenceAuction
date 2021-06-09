@@ -13,3 +13,7 @@ h3{
 .alert{
     border: solid;
 }
+.form-control:hover{
+    background-color: gray;
+    cursor: pointer;
+}
